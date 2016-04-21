@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Java EE アプリケーション開発ドキュメント &mdash; WebAppTraining 1.0 ドキュメント</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="WebAppTraining 1.0 ドキュメント" href="#" />
+    <link rel="next" title="1. 説明" href="01_Specification.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="01_Specification.html" title="1. 説明"
+             accesskey="N">次へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Java EE アプリケーション開発ドキュメント</a></li>
+<li><a class="reference internal" href="#id1">インデックス</a></li>
+</ul>
+
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="01_Specification.html"
+                        title="次の章へ">1. 説明</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="java-ee">
+<h1>Java EE アプリケーション開発ドキュメント<a class="headerlink" href="#java-ee" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>目次:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_Specification.html">1. 説明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_Specification.html#id2">1.1. 企画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_Specification.html#id3">1.2. 仕様</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01_Specification.html#id4">1.2.1. 社員番号の仕様</a></li>
+<li class="toctree-l3"><a class="reference internal" href="01_Specification.html#databasedesign-label">1.2.2. データベース設計</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_Preparation.html">2. 準備</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#id2">2.1. フォルダ構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#apache-maven">2.2. Apache Maven のインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id5">2.2.1. パスを設定する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#eclipse-pleiades">2.3. Eclipse Pleiades のインストールと起動</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#eclipse">2.4. Eclipse プラグインのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#postgresql">2.5. PostgreSQL のインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#jdbc">2.5.1. JDBC ドライバのダウンロード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id6">2.5.2. データベースの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#createtable">2.5.3. テーブルの作成</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#wildfly">2.6. WildFly のインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id8">2.6.1. 管理者ユーザの登録</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id9">2.6.2. 管理コンソールの起動と確認</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id10">2.6.3. JDBC ドライバの追加</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_Preparation.html#id11">2.6.4. データソースの追加</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#eclipse-wildfly">2.7. Eclipse 上での WildFly サーバ登録</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Preparation.html#eclipse-postgresql">2.8. Eclipse 上での PostgreSQL データ・ソース・エクスプローラー登録</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_CreateProject.html">3. プロジェクトの作成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_CreateProject.html#maven">3.1. Maven プロジェクトの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_CreateProject.html#jpa-java-persistence-api">3.2. JPA (Java Persistence API) の設定ファイル編集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_CreateProject.html#id2">3.3. プロジェクトの設定編集</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03_CreateProject.html#id3">3.3.1. ランタイムの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_CreateProject.html#jpa">3.3.2. JPA の設定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_CreateProject.html#xml">3.4. XML ファイルの削除</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_JSF.html">4. JSF を用いた画面表示</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#id1">4.1. 画面ファイルの作成</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#index-xhtml-endstate-xhtml">4.1.1. index.xhtml, endState.xhtml の作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#index-xhtmlendstate-xhtml">4.1.2. index.xhtml、endState.xhtml の編集</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#java">4.1.3. Java クラスの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#web-xml">4.1.4. web.xml の作成</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#id2">4.2. プロジェクトのデバッグ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#eclipse">4.2.1. Eclipse が使用するブラウザの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id3">4.2.2. デバッグ実行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#primefaces">4.3. PrimeFaces を使った画面表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#index-html">4.3.1. index.html 画面の修正</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id5">4.3.2. 画面表示の修正</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#id6">4.4. データの一覧表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id7">4.4.1. エンティティクラスの生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#shainlist">4.4.2. ShainList クラスの修正</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id8">4.4.3. index.xhtml の修正</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#template">4.5. Template による画面の分割表示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#shainlist-xhtml">4.5.1. 社員一覧画面 (shainList.xhtml) の作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id9">4.5.2. テンプレートの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#shainweb-css">4.5.3. スタイルシートの作成、shainweb.css の修正</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_JSF.html#id10">4.5.4. web.xml の修正</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#id11">4.6. まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_JSF.html#id12">4.7. しらべること</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_JPAJSF.html">5. JPA, JSF を組み合わせたデータ操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id1">5.1. ソースコードの修正</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="05_JPAJSF.html#id2">5.1.1. 新規追加するソースコード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_JPAJSF.html#id3">5.1.2. 修正するソースコード</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id4">5.2. データの挿入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id5">5.3. データの更新</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id6">5.4. データの削除</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id7">5.5. まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_JPAJSF.html#id8">5.6. 確認してください</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06_Validation.html">6. データバリデーション</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_Validation.html#id2">6.1. ソースコードの修正</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="06_Validation.html#id3">6.1.1. 新規追加するソースコード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_Validation.html#id4">6.1.2. 修正するソースコード</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="06_Validation.html#id5">6.2. 動作確認</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_Auth.html">7. ログイン認証画面の追加</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="07_Auth.html#web-xml">7.1. web.xml の修正</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_Auth.html#jboss-web-xml">7.2. jboss-web.xml の新規作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_Auth.html#wildfly">7.3. WildFly の設定追加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="07_Auth.html#basic">7.4. Basic 認証の動作確認</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08_Test.html">8. テストの実施</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="08_Test.html#id2">8.1. フォルダとファイルの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_Test.html#id3">8.2. ファイルの中身</a></li>
+<li class="toctree-l2"><a class="reference internal" href="08_Test.html#id4">8.3. テストの実行</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h1>インデックス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span>索引</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span>モジュール索引</span></a></li>
+<li><a class="reference internal" href="search.html"><span>検索ページ</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="01_Specification.html" title="1. 説明"
+             >次へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Wing Education Group.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1 で生成しました。
+    </div>
+  </body>
+</html>

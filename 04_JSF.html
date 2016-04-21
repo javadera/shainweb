@@ -1,0 +1,1145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. JSF を用いた画面表示 &mdash; WebAppTraining 1.0 ドキュメント</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="WebAppTraining 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="5. JPA, JSF を組み合わせたデータ操作" href="05_JPAJSF.html" />
+    <link rel="prev" title="3. プロジェクトの作成" href="03_CreateProject.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="05_JPAJSF.html" title="5. JPA, JSF を組み合わせたデータ操作"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="03_CreateProject.html" title="3. プロジェクトの作成"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. JSF を用いた画面表示</a><ul>
+<li><a class="reference internal" href="#id1">4.1. 画面ファイルの作成</a><ul>
+<li><a class="reference internal" href="#index-xhtml-endstate-xhtml">4.1.1. index.xhtml, endState.xhtml の作成</a></li>
+<li><a class="reference internal" href="#index-xhtmlendstate-xhtml">4.1.2. index.xhtml、endState.xhtml の編集</a></li>
+<li><a class="reference internal" href="#java">4.1.3. Java クラスの作成</a></li>
+<li><a class="reference internal" href="#web-xml">4.1.4. web.xml の作成</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">4.2. プロジェクトのデバッグ</a><ul>
+<li><a class="reference internal" href="#eclipse">4.2.1. Eclipse が使用するブラウザの設定</a></li>
+<li><a class="reference internal" href="#id3">4.2.2. デバッグ実行</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#primefaces">4.3. PrimeFaces を使った画面表示</a><ul>
+<li><a class="reference internal" href="#index-html">4.3.1. index.html 画面の修正</a></li>
+<li><a class="reference internal" href="#id5">4.3.2. 画面表示の修正</a><ul>
+<li><a class="reference internal" href="#css">4.3.2.1. CSS ファイルの作成</a></li>
+<li><a class="reference internal" href="#index-xhtml">4.3.2.2. index.xhtml ファイルの編集</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">4.4. データの一覧表示</a><ul>
+<li><a class="reference internal" href="#id7">4.4.1. エンティティクラスの生成</a></li>
+<li><a class="reference internal" href="#shainlist">4.4.2. ShainList クラスの修正</a></li>
+<li><a class="reference internal" href="#id8">4.4.3. index.xhtml の修正</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#template">4.5. Template による画面の分割表示</a><ul>
+<li><a class="reference internal" href="#shainlist-xhtml">4.5.1. 社員一覧画面 (shainList.xhtml) の作成</a></li>
+<li><a class="reference internal" href="#id9">4.5.2. テンプレートの作成</a></li>
+<li><a class="reference internal" href="#shainweb-css">4.5.3. スタイルシートの作成、shainweb.css の修正</a></li>
+<li><a class="reference internal" href="#id10">4.5.4. web.xml の修正</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">4.6. まとめ</a></li>
+<li><a class="reference internal" href="#id12">4.7. しらべること</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="03_CreateProject.html"
+                        title="前の章へ">3. プロジェクトの作成</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="05_JPAJSF.html"
+                        title="次の章へ">5. JPA, JSF を組み合わせたデータ操作</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/04_JSF.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="jsf">
+<h1>4. JSF を用いた画面表示<a class="headerlink" href="#jsf" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>JSF(Java Server Faces) を用いた画面表示と画面遷移について学習します。</p>
+<div class="section" id="id1">
+<h2>4.1. 画面ファイルの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>画面部分の作成を行います。</p>
+<div class="section" id="index-xhtml-endstate-xhtml">
+<h3>4.1.1. index.xhtml, endState.xhtml の作成<a class="headerlink" href="#index-xhtml-endstate-xhtml" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">プロジェクトを右クリックし「新規(N)」-&gt;「XHTML ページ」を選択します。</p>
+<a class="reference internal image-reference" href="_images/02_newXHTML.png"><img alt="_images/02_newXHTML.png" src="_images/02_newXHTML.png" style="width: 563.2px; height: 558.4px;" /></a>
+</li>
+<li><p class="first">「New XHTML Page」ダイアログで以下の値を指定し、「次へ(N)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>親フォルダー(E)</td>
+<td>shainweb/src/main/webapp</td>
+</tr>
+<tr class="row-odd"><td>ファイル名(M)</td>
+<td>index.xhtml</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/03_01_fileName.png"><img alt="_images/03_01_fileName.png" src="_images/03_01_fileName.png" style="width: 493.6px; height: 419.2px;" /></a>
+</li>
+<li><p class="first">「Select XHTML Template」画面で以下の値を指定し、「完了(F)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Use XHTML Template</td>
+<td>チェック</td>
+</tr>
+<tr class="row-odd"><td>テンプレート(T)</td>
+<td>Blank JSF Page</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/03_02_template.png"><img alt="_images/03_02_template.png" src="_images/03_02_template.png" style="width: 495.2px; height: 418.4px;" /></a>
+</li>
+<li><p class="first">「プロジェクト・エクスプローラー」の「デプロイ済みリソース」webapp 配下に index.xhtml が作成されます。</p>
+<img alt="_images/04_added.png" src="_images/04_added.png" />
+</li>
+<li><p class="first">同様に、endState.xhtml を作成してください。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="index-xhtmlendstate-xhtml">
+<h3>4.1.2. index.xhtml、endState.xhtml の編集<a class="headerlink" href="#index-xhtmlendstate-xhtml" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>index.xhtml を HTML エディターで開き、内容を以下のように編集します。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;&gt;
+
+&lt;h:head&gt;ShainWeb&lt;/h:head&gt;
+&lt;h:body&gt;
+   &lt;h:form&gt;
+      &lt;h:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;
+   &lt;/h:form&gt;
+&lt;/h:body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>次に endState.xhtml を HTML エディターで開き、内容を以下のように編集します。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;&gt;
+
+&lt;h:head&gt;ShainWeb - End State&lt;/h:head&gt;
+&lt;h:body&gt;
+   &lt;p&gt;This is the &lt;strong&gt;end state&lt;/strong&gt;.&lt;/p&gt;
+   &lt;h:form&gt;
+      &lt;h:link outcome=&quot;index.xhtml&quot;&gt;戻る&lt;/h:link&gt;
+   &lt;/h:form&gt;
+&lt;/h:body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>index.xhtml において #{} で囲まれた部分を EL 式 (Expression Language) と呼びます。</p>
+</div>
+<div class="section" id="java">
+<h3>4.1.3. Java クラスの作成<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>com.javadera.shainweb.controller パッケージに ShainList クラスを新規作成してください。
+このクラスは、画面での操作を受け取って処理を行うクラスになります (Backing Bean と呼ばれます)。
+ShainList クラスを開き、内容を以下のように編集して保存します。</p>
+<div class="highlight-python"><div class="highlight"><pre>package com.javadera.shainweb.controller;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named
+@RequestScoped
+public class ShainList {
+
+    public String serveResponse() {
+        return &quot;endState.xhtml&quot;;
+    }
+
+}
+</pre></div>
+</div>
+<p>クラスに Named アノテーションと RequestScoped アノテーションが付いています。
+Named アノテーションが付いたクラスは DI コンテナで管理され、クラス名を用いて他のクラスや EL 式から参照できるようになります。</p>
+<p>さきほど作成した index.xhtml 内で #{shainList.serveResponse} は、ShainList クラスの serveResponse メソッドを参照しています。</p>
+<p>RequestScoped アノテーションは、このクラスがリクエストを受け付けてからレスポンスを返すまでの間に生存することができるスコープです。
+レスポンスを返した後は、GC により破棄されます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>RequestScoped の他にもさまざまなスコープがあります。</p>
+<ul class="last simple">
+<li>ApplicationScoped</li>
+<li>SessionScoped</li>
+<li>ViewScoped</li>
+<li>ConversationScoped</li>
+<li>FlowScoped</li>
+</ul>
+</div>
+</div>
+<div class="section" id="web-xml">
+<h3>4.1.4. web.xml の作成<a class="headerlink" href="#web-xml" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>最後に web.xml を作成します。このファイルは、作成する Web アプリケーション全体の設定値を保持するファイルです。</p>
+<ol class="arabic">
+<li><p class="first">プロジェクトを右クリックし「新規(N)」-&gt;「その他」を選択します。</p>
+</li>
+<li><p class="first">「新規」ウィンドウで「XML」の「XML ファイル」を選択し、「次へ(N)&gt;」ボタンを押下します。</p>
+</li>
+<li><p class="first">「ウィザードを選択」ダイアログで「XML」配下の「XML ファイル」を選択し、「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_01_webxml.png"><img alt="_images/05_01_webxml.png" src="_images/05_01_webxml.png" style="width: 399.2px; height: 397.6px;" /></a>
+</li>
+<li><p class="first">「XML」画面で以下の値を指定し、「次へ(N)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>親フォルダー(E)</td>
+<td>shainweb/src/main/webapp/WEB-INF</td>
+</tr>
+<tr class="row-odd"><td>ファイル名(M)</td>
+<td>web.xml</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/05_02_fileName.png"><img alt="_images/05_02_fileName.png" src="_images/05_02_fileName.png" style="width: 400.8px; height: 456.8px;" /></a>
+</li>
+<li><p class="first">「次から XML ファイルを作成」画面で「XML テンプレートから XML ファイルを作成(T)」を指定し、「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_03_create.png"><img alt="_images/05_03_create.png" src="_images/05_03_create.png" style="width: 398.4px; height: 456.0px;" /></a>
+</li>
+<li><p class="first">「XML テンプレートの選択」画面で何も変更せず、「完了(F)」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_04_template.png"><img alt="_images/05_04_template.png" src="_images/05_04_template.png" style="width: 400.8px; height: 456.0px;" /></a>
+</li>
+<li><p class="first">作成された XML ファイルを以下のように編集して保存します。</p>
+</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+   &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee
+    http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
+    version=&quot;3.1&quot; metadata-complete=&quot;false&quot;&gt;
+    &lt;display-name&gt;
+        shainweb
+    &lt;/display-name&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;
+        javax.faces.webapp.FacesServlet
+        &lt;/servlet-class&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;*.xhtml&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;javax.faces.PROJECT_STAGE&lt;/param-name&gt;
+        &lt;param-value&gt;Development&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;welcome-file-list&gt;
+        &lt;welcome-file&gt;index.xhtml&lt;/welcome-file&gt;
+    &lt;/welcome-file-list&gt;
+&lt;/web-app&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>4.2. プロジェクトのデバッグ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>今まで作成した画面をデバッグ実行します。</p>
+<div class="section" id="eclipse">
+<h3>4.2.1. Eclipse が使用するブラウザの設定<a class="headerlink" href="#eclipse" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>デバッグ時に、通常使用している Web ブラウザを使用したい場合は、以下の手順で設定してください。</p>
+<ol class="arabic">
+<li><p class="first">メニューバーの「ウィンドウ」から「設定」を選択します。</p>
+</li>
+<li><p class="first">「設定」ダイアログの左ペイン「一般」配下の「Web ブラウザー」を選択します。</p>
+</li>
+<li><p class="first">右ペインで「外部 Web ブラウザーを使用(X)」を選択します。</p>
+<a class="reference internal image-reference" href="_images/00_browser.png"><img alt="_images/00_browser.png" src="_images/00_browser.png" style="width: 506.1px; height: 277.9px;" /></a>
+</li>
+<li><p class="first">「外部 Web ブラウザー」で好みのブラウザを指定します。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>4.2.2. デバッグ実行<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>デバッグして動作を確認します。</p>
+<ol class="arabic">
+<li><p class="first">プロジェクトを右クリックし「デバッグ(D)」-&gt;「サーバーでデバッグ(1)」を選択します。</p>
+<a class="reference internal image-reference" href="_images/01_debugOnServer.png"><img alt="_images/01_debugOnServer.png" src="_images/01_debugOnServer.png" style="width: 486.5px; height: 361.9px;" /></a>
+</li>
+<li><p class="first">コンソール画面上で、WildFly が起動していることが確認できます。</p>
+</li>
+<li><p class="first">ブラウザに以下のような画面が表示されます。</p>
+<a class="reference internal image-reference" href="_images/02_index.png"><img alt="_images/02_index.png" src="_images/02_index.png" style="width: 536.0px; height: 284.0px;" /></a>
+</li>
+<li><p class="first">ShainList クラスの serveResponse メソッドで return 文にブレイクポイントを設定します。</p>
+</li>
+<li><p class="first">「Invoke Action」ボタンを押下します。</p>
+</li>
+<li><p class="first">設定したブレイクポイントで停止し、デバッグ可能であることが分かります。</p>
+<a class="reference internal image-reference" href="_images/03_breakPoint.png"><img alt="_images/03_breakPoint.png" src="_images/03_breakPoint.png" style="width: 373.0px; height: 197.0px;" /></a>
+</li>
+<li><p class="first">Eclipse 上で F8 を押下すると endState.xhtml が表示されます。</p>
+<a class="reference internal image-reference" href="_images/04_endState.png"><img alt="_images/04_endState.png" src="_images/04_endState.png" style="width: 428.0px; height: 233.0px;" /></a>
+</li>
+<li><p class="first">画面上で「戻る」リンクをクリックすると最初の画面に戻ります。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="primefaces">
+<h2>4.3. PrimeFaces を使った画面表示<a class="headerlink" href="#primefaces" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p id="index-0">JSF のライブラリである <a class="reference external" href="http://www.primefaces.org/showcase/">PrimeFaces</a> を用いて、リッチな Web アプリケーションを作成する準備をします。</p>
+<ol class="arabic">
+<li><p class="first">プロジェクト直下の「pom.xml」を開きます。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">&lt;dependencies&gt; タグを探し、その配下に以下を追記して保存します。</div>
+<div class="line">以下では arquillian-protocol-servlet の下に追記したところです。</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&lt;dependency&gt;
+ &lt;groupId&gt;org.jboss.arquillian.protocol&lt;/groupId&gt;
+ &lt;artifactId&gt;arquillian-protocol-servlet&lt;/artifactId&gt;
+ &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+ &lt;groupId&gt;org.primefaces&lt;/groupId&gt;
+ &lt;artifactId&gt;primefaces&lt;/artifactId&gt;
+ &lt;version&gt;5.3&lt;/version&gt;
+&lt;/dependency&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Maven がライブラリをダウンロードしてプロジェクトに組み込みます。</p>
+</li>
+</ol>
+<div class="section" id="index-html">
+<h3>4.3.1. index.html 画面の修正<a class="headerlink" href="#index-html" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PrimeFaces のボタンを使用してみます。index.xhtml を以下のように書き換えてください。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+&lt;h:head&gt;ShainWeb&lt;/h:head&gt;
+&lt;h:body&gt;
+    &lt;h:form&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;JSF&lt;/td&gt;
+                &lt;td&gt;&lt;h:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;PrimeFaces&lt;/td&gt;
+                &lt;td&gt;&lt;p:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/h:form&gt;
+&lt;/h:body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>デバッグ実行すると、以下のようになります。</p>
+<a class="reference internal image-reference" href="_images/06_pf_Button.png"><img alt="_images/06_pf_Button.png" src="_images/06_pf_Button.png" style="width: 422.0px; height: 222.0px;" /></a>
+<p>ボタン上にマウスを移動したときにボタンの色が変わることが分かります。
+以降の開発では PrimeFaces のコンポーネントを用いて進めます。</p>
+</div>
+<div class="section" id="id5">
+<h3>4.3.2. 画面表示の修正<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上の図で PrimeFaces のボタン上に表示されるフォントが大きいことが分かります。これを CSS を設定することで小さくします。</p>
+<div class="section" id="css">
+<h4>4.3.2.1. CSS ファイルの作成<a class="headerlink" href="#css" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">shainweb プロジェクトの「デプロイ済みリソース」配下の「webapp」「resources」を右クリックし「新規(N)」「フォルダー」を選択します。</p>
+</li>
+<li><p class="first">「フォルダー」画面で以下の値を指定し、「完了(F)」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>親フォルダー(E)</td>
+<td>shainweb/src/main/webapp/resources</td>
+</tr>
+<tr class="row-odd"><td>フォルダー名(N)</td>
+<td>css</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/00_folder.png"><img alt="_images/00_folder.png" src="_images/00_folder.png" style="width: 351.2px; height: 457.6px;" /></a>
+</li>
+<li><p class="first">作成した css フォルダーを右クリックし、「新規(N)&gt;」「その他(O)」を選択します。</p>
+</li>
+<li><p class="first">「Web」配下の「CSS ファイル」を選択し、「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/01_wizard.png"><img alt="_images/01_wizard.png" src="_images/01_wizard.png" style="width: 397.6px; height: 397.6px;" /></a>
+</li>
+<li><p class="first">「CSS」画面で以下の値を指定し、「完了(F)」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>親フォルダー(E)</td>
+<td>shainweb/src/main/webapp/resources/css</td>
+</tr>
+<tr class="row-odd"><td>ファイル名(M)</td>
+<td>shainweb.css</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/02_css.png"><img alt="_images/02_css.png" src="_images/02_css.png" style="width: 399.2px; height: 457.6px;" /></a>
+</li>
+</ol>
+<p>作成された shainweb.css を以下のように編集してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>.ui-widget, .ui-widget .ui-widget {
+    font-size: 80%;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-xhtml">
+<h4>4.3.2.2. index.xhtml ファイルの編集<a class="headerlink" href="#index-xhtml" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>作成した CSS ファイルを index.xhtml に取り込みます。index.xhtml を以下のように編集してください。</p>
+<p>&lt;h:head&gt; の部分が変わります。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+&lt;h:head&gt;
+    &lt;title&gt;ShainWeb&lt;/title&gt;
+    &lt;h:outputStylesheet library=&quot;css&quot; name=&quot;shainweb.css&quot; /&gt;
+&lt;/h:head&gt;
+   &lt;h:body&gt;
+    &lt;h:form&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;JSF&lt;/td&gt;
+                &lt;td&gt;&lt;h:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;PrimeFaces&lt;/td&gt;
+                &lt;td&gt;&lt;p:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/h:form&gt;
+&lt;/h:body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>画面をリロードすると、フォントが小さくなっていることが確認できます。</p>
+<a class="reference internal image-reference" href="_images/03_complete.png"><img alt="_images/03_complete.png" src="_images/03_complete.png" style="width: 377.0px; height: 242.0px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>4.4. データの一覧表示<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>データ一覧を PrimeFaces コンポーネントを使って一覧表示します。</p>
+<p><a class="reference internal" href="02_Preparation.html#createtable"><span>テーブルの作成</span></a> で作成したテーブルのデータを保持する Java クラスを用いてレコードを Backing Bean 内で生成し index.xhtml に表示します。</p>
+<div class="section" id="id7">
+<h3>4.4.1. エンティティクラスの生成<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="02_Preparation.html#createtable"><span>テーブルの作成</span></a> で作成したテーブルのデータを保持する「エンティティクラス」を自動生成します。</p>
+<ol class="arabic">
+<li><p class="first">プロジェクトを右クリックし「JPA ツール」-&gt;「テーブルからエンティティーを生成...」を選択します。</p>
+<a class="reference internal image-reference" href="_images/00_tableToEntity.png"><img alt="_images/00_tableToEntity.png" src="_images/00_tableToEntity.png" style="width: 464.8px; height: 560.8px;" /></a>
+</li>
+<li><p class="first">「エンティティーの生成」ダイアログで以下の値を指定し、「完了(F)」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">項目</th>
+<th class="head">設定値</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>出力ディレクトリー(D)</td>
+<td>\shainweb\src\main\java</td>
+</tr>
+<tr class="row-odd"><td>パッケージ(P)</td>
+<td>com.javadera.shainweb.model</td>
+</tr>
+<tr class="row-even"><td>コンソール構成(C)</td>
+<td>shainweb</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/01_createEntity.png"><img alt="_images/01_createEntity.png" src="_images/01_createEntity.png" style="width: 490.4px; height: 292.8px;" /></a>
+</li>
+<li><p class="first">com.javadera.shainweb.model パッケージ配下に Employee_.java と Employee.java および RoleMaster.java と RoleMaster_.java の 4 つのファイルが生成されていることを確認します。</p>
+<img alt="_images/02_complete.png" src="_images/02_complete.png" />
+</li>
+</ol>
+<p>アンダーバーの付いていないクラス Employee.java と RoleMaster.java の中身を確認してください。
+&#64;Id や &#64;Column などのアノテーションが付いていることが分かります。</p>
+</div>
+<div class="section" id="shainlist">
+<h3>4.4.2. ShainList クラスの修正<a class="headerlink" href="#shainlist" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Backing Bean である ShainList クラスを修正します。主な修正点は以下の通りです。</p>
+<ul class="simple">
+<li>社員一覧データを保持する private 変数と getter、setter メソッドの追加</li>
+<li>&#64;PostConstruct アノテーションが付いた初期化処理用メソッド init の追加</li>
+<li>Backing Bean 内で Employee データを生成する createEmp メソッドの追加</li>
+</ul>
+<p>ShainList クラスを以下のように修正してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>package com.javadera.shainweb.controller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+import com.javadera.shainweb.model.Employee;
+
+@Named
+@RequestScoped
+public class ShainList {
+
+    private List&lt;Employee&gt; empList = new ArrayList&lt;&gt;();
+
+    @PostConstruct
+    public void init() {
+     for(int i = 0; i &lt; 10; i++) {
+         Employee emp = createEmp(i);
+         empList.add(emp);
+     }
+    }
+
+    /**
+     * endState ページに遷移します。
+     * @return
+     */
+    public String serveResponse() {
+        return &quot;endState&quot;;
+    }
+
+
+    /**
+     * 指定した数値で従業員テストデータを作成します。
+     * @param i
+     * @return
+     */
+    private Employee createEmp(int i) {
+        Employee emp = new Employee();
+        emp.setShainId(i);
+        emp.setFamilyName(&quot;姓 &quot; + i);
+        emp.setFamilyNameKana(&quot;セイ &quot; + i);
+        emp.setGivenName(&quot;名 &quot; + i);
+        emp.setGivenNameKana(&quot;メイ &quot; + i);
+        emp.setEmail(&quot;sei&quot; + i + &quot;@shainweb.com&quot;);
+        emp.setPhoneNumber(&quot;0123&quot; + i);
+        emp.setCellphoneNumber(&quot;3210&quot; + i);
+        emp.setAddress(&quot;住所 &quot; + i);
+        emp.setJoinDate(new Date());
+        return emp;
+    }
+
+    //--- getter, setter ---
+    public List&lt;Employee&gt; getEmpList() {
+        return empList;
+    }
+
+    public void setEmpList(List&lt;Employee&gt; empList) {
+        this.empList = empList;
+    }
+
+}
+</pre></div>
+</div>
+<p>PostConstruct アノテーションが付いたメソッドは、アプリケーションサーバ内で本クラスの作成終了後に呼ばれるようになります。
+そのタイミングで createEmp メソッドを用いてテストデータ (10 名分) を作成し一覧に追加しています。</p>
+</div>
+<div class="section" id="id8">
+<h3>4.4.3. index.xhtml の修正<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PrimeFaces コンポーネントの dataTable を使って一覧表示部分を追記します。以下のように修正してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+&lt;h:head&gt;
+    &lt;title&gt;ShainWeb&lt;/title&gt;
+    &lt;h:outputStylesheet library=&quot;css&quot; name=&quot;shainweb.css&quot; /&gt;
+&lt;/h:head&gt;
+&lt;h:body&gt;
+    &lt;h:form&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;JSF&lt;/td&gt;
+                &lt;td&gt;&lt;h:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;PrimeFaces&lt;/td&gt;
+                &lt;td&gt;&lt;p:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+
+        &lt;p:dataTable var=&quot;e&quot; value=&quot;#{shainList.empList}&quot;&gt;
+            &lt;p:column headerText=&quot;Id&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.shainId}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;氏名&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.familyName} #{e.givenName}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;氏名(カナ)&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.familyNameKana} #{e.givenNameKana}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;メールアドレス&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.email}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;電話番号(携帯)&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.phoneNumber} (#{e.cellphoneNumber})&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;住所&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.address}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;入社日&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.joinDate}&quot;/&gt;
+            &lt;/p:column&gt;
+
+            &lt;p:column headerText=&quot;退社日&quot;&gt;
+                &lt;h:outputText value=&quot;#{e.quitDate}&quot;/&gt;
+            &lt;/p:column&gt;
+        &lt;/p:dataTable&gt;
+    &lt;/h:form&gt;
+&lt;/h:body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>プロジェクトをデバッグ実行してください。以下のような画面が表示されます。</p>
+<a class="reference internal image-reference" href="_images/03_dataTable.png"><img alt="_images/03_dataTable.png" src="_images/03_dataTable.png" style="width: 737.4px; height: 328.8px;" /></a>
+<p>退社日は設定していないので空欄になります。</p>
+</div>
+</div>
+<div class="section" id="template">
+<h2>4.5. Template による画面の分割表示<a class="headerlink" href="#template" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>テンプレートを使って、画面を分割します。これにより以下の図に示すように見やすい画面を構築できます。</p>
+<a class="reference internal image-reference" href="_images/01_goal.png"><img alt="_images/01_goal.png" src="_images/01_goal.png" style="width: 735.6px; height: 376.8px;" /></a>
+<div class="section" id="shainlist-xhtml">
+<h3>4.5.1. 社員一覧画面 (shainList.xhtml) の作成<a class="headerlink" href="#shainlist-xhtml" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">index.xhtml, endState.xhtml ファイルと同じ場所に shainList.xhtml を新規作成してください。</p>
+</li>
+<li><p class="first">shainList.xhtml の内容を以下のように修正してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ui:composition xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;
+      template=&quot;/WEB-INF/template.xhtml&quot;&gt;
+
+        &lt;ui:define name=&quot;content&quot;&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;JSF&lt;/td&gt;
+                 &lt;td&gt;&lt;h:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;PrimeFaces&lt;/td&gt;
+                    &lt;td&gt;&lt;p:commandButton action=&quot;#{shainList.serveResponse}&quot; value=&quot;Invoke Action&quot; /&gt;&lt;/td&gt;
+               &lt;/tr&gt;
+            &lt;/table&gt;
+
+            &lt;p:dataTable var=&quot;e&quot; value=&quot;#{shainList.empList}&quot;&gt;
+                &lt;p:column headerText=&quot;Id&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.shainId}&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;氏名&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.familyName} #{e.givenName}&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;氏名(カナ)&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.familyNameKana} #{e.givenNameKana}&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;メールアドレス&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.email}&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;電話番号(携帯)&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.phoneNumber} (#{e.cellphoneNumber})&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;入社日&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.joinDate}&quot;/&gt;
+                &lt;/p:column&gt;
+
+                &lt;p:column headerText=&quot;退社日&quot;&gt;
+                    &lt;h:outputText value=&quot;#{e.quitDate}&quot;/&gt;
+                &lt;/p:column&gt;
+            &lt;/p:dataTable&gt;
+        &lt;/ui:define&gt;
+&lt;/ui:composition&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">index.xhtml を <strong>削除</strong> してください。</p>
+</li>
+<li><p class="first">endState.xhtml の内容を以下のように修正してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;ui:composition xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;
+      template=&quot;/WEB-INF/template.xhtml&quot;&gt;
+
+        &lt;ui:define name=&quot;content&quot;&gt;
+            &lt;h:link outcome=&quot;shainList.xhtml&quot;&gt;戻る&lt;/h:link&gt;
+        &lt;/ui:define&gt;
+&lt;/ui:composition&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h3>4.5.2. テンプレートの作成<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>WEB-INF フォルダ内に以下の 4 つの XHTML を新規作成してください。</p>
+<ul class="simple">
+<li>template.xhtml</li>
+<li>top.xhtml</li>
+<li>left.xhtml</li>
+<li>bottom.xhtml</li>
+</ul>
+<p>それぞれの内容を以下のように修正してください。</p>
+<p><strong>template.xhtml</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+    &lt;h:head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+        &lt;h:outputStylesheet library=&quot;css&quot; name=&quot;shainweb.css&quot; /&gt;
+        &lt;h:outputStylesheet library=&quot;css&quot; name=&quot;default.css&quot; /&gt;
+        &lt;h:outputStylesheet library=&quot;css&quot; name=&quot;cssLayout.css&quot; /&gt;
+        &lt;title&gt;Shainweb Template&lt;/title&gt;
+    &lt;/h:head&gt;
+
+    &lt;h:body&gt;
+        &lt;h:form&gt;
+            &lt;div id=&quot;top&quot;&gt;
+                &lt;ui:insert name=&quot;top&quot;&gt;&lt;ui:include src=&quot;top.xhtml&quot; /&gt;&lt;/ui:insert&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;div id=&quot;left&quot;&gt;
+                    &lt;ui:insert name=&quot;left&quot;&gt;&lt;ui:include src=&quot;left.xhtml&quot; /&gt;&lt;/ui:insert&gt;
+                &lt;/div&gt;
+                &lt;div id=&quot;content&quot; class=&quot;left_content&quot;&gt;
+                    &lt;ui:insert name=&quot;content&quot;&gt;Content&lt;/ui:insert&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;bottom&quot;&gt;
+                &lt;ui:insert name=&quot;bottom&quot;&gt;&lt;ui:include src=&quot;bottom.xhtml&quot; /&gt;&lt;/ui:insert&gt;
+            &lt;/div&gt;
+        &lt;/h:form&gt;
+
+    &lt;/h:body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+<p><strong>top.xhtml</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+    &lt;h:head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;/h:head&gt;
+
+    &lt;h:body&gt;
+        &lt;ui:composition&gt;
+            Shainweb top
+        &lt;/ui:composition&gt;
+    &lt;/h:body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+<p><strong>left.xhtml</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+    &lt;h:head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;/h:head&gt;
+
+    &lt;h:body&gt;
+        &lt;ui:composition&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;h:link outcome=&quot;shainList.xhtml&quot;&gt;社員リスト&lt;/h:link&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;/ui:composition&gt;
+    &lt;/h:body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+<p><strong>bottom.xhtml</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;
+      xmlns:ui=&quot;http://java.sun.com/jsf/facelets&quot;
+      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+      xmlns:p=&quot;http://primefaces.org/ui&quot;&gt;
+
+    &lt;h:head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    &lt;/h:head&gt;
+
+    &lt;h:body&gt;
+        &lt;ui:composition&gt;
+        Shainweb by wing Inc.
+        &lt;/ui:composition&gt;
+    &lt;/h:body&gt;
+
+&lt;/html&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="shainweb-css">
+<h3>4.5.3. スタイルシートの作成、shainweb.css の修正<a class="headerlink" href="#shainweb-css" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>webapp/resources/css フォルダ内に以下の 2 つの css ファイルを新規作成してください。</p>
+<ul class="simple">
+<li>cssLayout.css</li>
+<li>default.css</li>
+</ul>
+<p>それぞれの内容を以下のように修正してください。</p>
+<p><strong>cssLayout.css</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+}
+
+#bottom {
+    position: relative;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    text-align: right;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 5px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+</pre></div>
+</div>
+<p><strong>default.css</strong></p>
+<div class="highlight-python"><div class="highlight"><pre>body {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, &quot;Verdana CE&quot;,  Arial, &quot;Arial CE&quot;, &quot;Lucida Grande CE&quot;, lucida, &quot;Helvetica CE&quot;, sans-serif;
+    color: #000000;
+    margin: 10px;
+}
+
+h1 {
+    font-family: Arial, &quot;Arial CE&quot;, &quot;Lucida Grande CE&quot;, lucida, &quot;Helvetica CE&quot;, sans-serif;
+    border-bottom: 1px solid #AFAFAF;
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: #D20005;
+}
+
+a:link, a:visited {
+  color: #045491;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #045491;
+  font-weight : bold;
+  text-decoration : underline;
+}
+</pre></div>
+</div>
+<p><strong>shainList.css</strong></p>
+<p>80% に設定したものを 100% に修正してください。</p>
+</div>
+<div class="section" id="id10">
+<h3>4.5.4. web.xml の修正<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>最後に、WEB-INF 配下にある web.xml の &lt;welcome-file&gt; タグ内の値を shainList.xhtml に修正してください。</p>
+<p>デバッグ実行し、以下のような画面が出力されることを確認してください。</p>
+<a class="reference internal image-reference" href="_images/01_goal.png"><img alt="_images/01_goal.png" src="_images/01_goal.png" style="width: 735.6px; height: 376.8px;" /></a>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>4.6. まとめ<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li>JSF では基本的に XHTML を使用する。</li>
+<li>index.xhtml で #{shainList.serveResponse} の記述で ShainList クラス (Backing Bean) の serveResponse メソッドが呼び出された。</li>
+<li>serveResponse メソッドの戻り値で遷移したい画面の名前 (endState.xhtml) を指定する。</li>
+<li>Primefaces を用いるとリッチな UI コンポーネントが手軽に使用できる。</li>
+<li>テンプレートを使うとより使いやすい画面が作成できる。</li>
+</ol>
+<p>他に気付いたこと、気になったことがあればメモして調査してみてください。</p>
+<p>(例)</p>
+<ul>
+<li><p class="first">serveResponse メソッドで戻り値に空文字列を設定したり &#8221;.xhtml&#8221; を書き忘れたらどうなるのか？</p>
+</li>
+<li><div class="first line-block">
+<div class="line">アドレス欄では endState.xhtml が表示されても http://localhost:8080/shainweb/index.xhtml から変わらない。</div>
+<div class="line">http://localhost:8080/shainweb/endState.xhtml になるべきでは？</div>
+</div>
+</li>
+<li><p class="first">index.xhtml でボタンをクリックしてから endState.xhtml が表示されるまでに JSF ではどのようなライフサイクルの処理が行われているか？</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>4.7. しらべること<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul>
+<li><div class="first line-block">
+<div class="line">表示された一覧で「入社日」の表記が「Fri Dec 25 11:13:22 JST 2015」のようになっています。時分秒や曜日は不要で YYYY/MM/DD のように表記すべきです。</div>
+<div class="line">XHTML をどのように修正すれば、YYYY/MM/DD 表記にできるのでしょうか？</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="05_JPAJSF.html" title="5. JPA, JSF を組み合わせたデータ操作"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="03_CreateProject.html" title="3. プロジェクトの作成"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Wing Education Group.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1 で生成しました。
+    </div>
+  </body>
+</html>

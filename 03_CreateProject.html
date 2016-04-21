@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3. プロジェクトの作成 &mdash; WebAppTraining 1.0 ドキュメント</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="WebAppTraining 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="4. JSF を用いた画面表示" href="04_JSF.html" />
+    <link rel="prev" title="2. 準備" href="02_Preparation.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="04_JSF.html" title="4. JSF を用いた画面表示"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="02_Preparation.html" title="2. 準備"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. プロジェクトの作成</a><ul>
+<li><a class="reference internal" href="#maven">3.1. Maven プロジェクトの作成</a></li>
+<li><a class="reference internal" href="#jpa-java-persistence-api">3.2. JPA (Java Persistence API) の設定ファイル編集</a></li>
+<li><a class="reference internal" href="#id2">3.3. プロジェクトの設定編集</a><ul>
+<li><a class="reference internal" href="#id3">3.3.1. ランタイムの設定</a></li>
+<li><a class="reference internal" href="#jpa">3.3.2. JPA の設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xml">3.4. XML ファイルの削除</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="02_Preparation.html"
+                        title="前の章へ">2. 準備</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="04_JSF.html"
+                        title="次の章へ">4. JSF を用いた画面表示</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/03_CreateProject.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>3. プロジェクトの作成<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="maven">
+<h2>3.1. Maven プロジェクトの作成<a class="headerlink" href="#maven" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">C:\tool\pleiades\eclipse 内の eclipse.exe を起動します。</p>
+</li>
+<li><p class="first">メニューの「ファイル(F)」-&gt;「新規(N)」-&gt;「その他」を指定します。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">「ウィザードを選択」画面が表示されます。「Maven」配下の「Maven プロジェクト」を選択します。</div>
+<div class="line">「次へ(N)&gt;」ボタンを押下します。</div>
+</div>
+<img alt="_images/01_selectMaven.JPG" src="_images/01_selectMaven.JPG" />
+</li>
+<li><p class="first">「新規 Maven プロジェクト」画面が表示されます。変更せず「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/02_newMavenProj.JPG"><img alt="_images/02_newMavenProj.JPG" src="_images/02_newMavenProj.JPG" style="width: 450.8px; height: 352.8px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">「アーキタイプの選択」画面が表示されます。</div>
+<div class="line">「フィルター(F)」に「javaee7」を入力するとアーキタイプが絞り込まれます。</div>
+</div>
+<a class="reference internal image-reference" href="_images/03_filtered.JPG"><img alt="_images/03_filtered.JPG" src="_images/03_filtered.JPG" style="width: 555.8px; height: 409.5px;" /></a>
+</li>
+<li><p class="first">一覧から以下のものを選択し、「次へ(N)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="60%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">グループ Id</th>
+<th class="head">アーティファクト Id</th>
+<th class="head">バージョン</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>org.wildfly.archtype</td>
+<td>wildfly-javaee7-webapp-blank-archetype</td>
+<td>8.2.0.Final</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/04_selectArche.JPG"><img alt="_images/04_selectArche.JPG" src="_images/04_selectArche.JPG" style="width: 635.2px; height: 468.0px;" /></a>
+</li>
+<li><p class="first">「アーキタイプ・パラメーターの指定」画面が表示されます。以下の値を設定して「完了(F)」を押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>グループ Id:</td>
+<td>com.javadera</td>
+</tr>
+<tr class="row-odd"><td>アーティファクト Id:</td>
+<td>shainweb</td>
+</tr>
+<tr class="row-even"><td>バージョン:</td>
+<td>1.0.0</td>
+</tr>
+<tr class="row-odd"><td>パッケージ:</td>
+<td>com.javadera.shainweb</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/05_archtypeParam.JPG"><img alt="_images/05_archtypeParam.JPG" src="_images/05_archtypeParam.JPG" style="width: 635.2px; height: 468.0px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">「プロジェクト・エクスプローラー」に「shainweb」が追加されます。</div>
+<div class="line">「マーカー」に「JPA 問題」の警告が表示されますが、後ほど修正します。</div>
+</div>
+</li>
+<li><p class="first">Java ソースコードを保存するためのパッケージを作成します。以下のパッケージを src/main/java 配下に作成してください。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">パッケージ名</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>com.javadera.shainweb.controller</td>
+</tr>
+<tr class="row-odd"><td>com.javadera.shainweb.data</td>
+</tr>
+<tr class="row-even"><td>com.javadera.shainweb.model</td>
+</tr>
+<tr class="row-odd"><td>com.javadera.shainweb.rest</td>
+</tr>
+<tr class="row-even"><td>com.javadera.shainweb.service</td>
+</tr>
+<tr class="row-odd"><td>com.javadera.shainweb.util</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>作成されたプロジェクトを「プロジェクト・エクスプローラー」から開くと下図のようになっています (一部のみ拡大表示)。</p>
+<img alt="_images/01_content.png" src="_images/01_content.png" />
+</div>
+<div class="section" id="jpa-java-persistence-api">
+<h2>3.2. JPA (Java Persistence API) の設定ファイル編集<a class="headerlink" href="#jpa-java-persistence-api" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p id="index-0">JPA は Java EE アプリケーションがデータベースアクセスを行う際の標準 API です。</p>
+<ol class="arabic">
+<li><div class="first line-block">
+<div class="line">「プロジェクト・エクスプローラー」の中央よりやや上部の src/main/resources/META-INF 配下にある、</div>
+<div class="line">persistence.xml をダブルクリックしてください。</div>
+</div>
+</li>
+<li><p class="first">「Hibernate」タブを表示し、以下の値を設定します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>データベース方言(D):</td>
+<td>PostgreSQL</td>
+</tr>
+<tr class="row-odd"><td>ドライバー･クラス(R)</td>
+<td>org.postgresql.Driver</td>
+</tr>
+<tr class="row-even"><td>接続 URL(U):</td>
+<td>jdbc:postgresql:shainweb</td>
+</tr>
+<tr class="row-odd"><td>デフォルト・スキーマ:</td>
+<td>public</td>
+</tr>
+<tr class="row-even"><td>デフォルト・カタログ:</td>
+<td>(空欄)</td>
+</tr>
+<tr class="row-odd"><td>ユーザ名(N):</td>
+<td>postgres</td>
+</tr>
+<tr class="row-even"><td>パスワード(P):</td>
+<td>PostgreSQL インストール時に設定したパスワード</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">設定が終了したら「ctrl ＋ s キー」を押下して保存します。</p>
+</li>
+<li><p class="first">「ソース」タブを選択します。これまでに設定した値が XML 形式で保存されています。</p>
+</li>
+<li><p class="first">&lt;jta-data-source&gt; タグの値で「shainwebDS」となっている部分を「ShainwebDS」に修正します。</p>
+</li>
+<li><p class="first">さらに、&lt;property&gt; タグの name 属性値が「hibernate.hbm2ddl.auto」となっている行を削除します。</p>
+</li>
+</ol>
+<p>最終的に persistence.xml は以下のようになります(一部省略)。</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;persistence version=&quot;2.1&quot;
+   xmlns=&quot;http://xmlns.jcp.org/xml/ns/persistence&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   xsi:schemaLocation=&quot;
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd&quot;&gt;
+   &lt;persistence-unit name=&quot;primary&quot;&gt;
+      &lt;!-- If you are running in a production environment, add a managed
+         data source, this example data source is just for development and testing! --&gt;
+      &lt;!-- The datasource is deployed as WEB-INF/shainweb-ds.xml, you
+         can find it in the source at src/main/webapp/WEB-INF/shainweb-ds.xml --&gt;
+      &lt;jta-data-source&gt;java:jboss/datasources/ShainwebDS&lt;/jta-data-source&gt;
+      &lt;properties&gt;
+         &lt;!-- Properties for Hibernate --&gt;
+         &lt;property name=&quot;hibernate.show_sql&quot; value=&quot;false&quot; /&gt;
+         &lt;property name=&quot;hibernate.dialect&quot; value=&quot;org.hibernate.dialect.PostgreSQLDialect&quot;/&gt;
+         &lt;property name=&quot;hibernate.connection.driver_class&quot; value=&quot;org.postgresql.Driver&quot;/&gt;
+         &lt;property name=&quot;hibernate.connection.url&quot; value=&quot;jdbc:postgresql:shainweb&quot;/&gt;
+         &lt;property name=&quot;hibernate.default_schema&quot; value=&quot;public&quot;/&gt;
+         &lt;property name=&quot;hibernate.connection.username&quot; value=&quot;postgres&quot;/&gt;
+         &lt;property name=&quot;hibernate.connection.password&quot; value=&quot;pass#1234&quot;/&gt;
+      &lt;/properties&gt;
+   &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>3.3. プロジェクトの設定編集<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3>3.3.1. ランタイムの設定<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">shainweb プロジェクトを右クリックし、一番下にある「プロパティ」を選択します。</p>
+<a class="reference internal image-reference" href="_images/01_property.JPG"><img alt="_images/01_property.JPG" src="_images/01_property.JPG" style="width: 316.8px; height: 580.8px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">左ペインから下のほうにある「プロジェクト・ファセット」を選択し、右ペインで「ランタイム(R)」タブを選択します。</div>
+<div class="line">右ペインで設定されている「プロジェクト・ファセット」のチェックは変更する必要はありません。</div>
+</div>
+<a class="reference internal image-reference" href="_images/02_facet.JPG"><img alt="_images/02_facet.JPG" src="_images/02_facet.JPG" style="width: 784.0px; height: 539.2px;" /></a>
+</li>
+<li><p class="first">「ランタイム」の一覧から「WildFly-9.0.2.Final」を選択し、右下の「適用(A)」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/03_selectRuntime.JPG"><img alt="_images/03_selectRuntime.JPG" src="_images/03_selectRuntime.JPG" style="width: 784.0px; height: 539.2px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="jpa">
+<h3>3.3.2. JPA の設定<a class="headerlink" href="#jpa" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">左ペインで「JPA」を選択します。</p>
+<a class="reference internal image-reference" href="_images/04_JPA.JPG"><img alt="_images/04_JPA.JPG" src="_images/04_JPA.JPG" style="width: 660.8px; height: 507.2px;" /></a>
+</li>
+<li><p class="first">右ペインで以下の値を設定します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="18%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">場所</th>
+<th class="head">名前</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JPA 実装</td>
+<td>型</td>
+<td>ターゲット・ランタイムが提供するライブラリー</td>
+</tr>
+<tr class="row-odd"><td>接続</td>
+<td>&nbsp;</td>
+<td>PostgreSQL</td>
+</tr>
+<tr class="row-even"><td>正規メタモデル(JPA 2.0)</td>
+<td>ソース・フォルダー</td>
+<td>src/main/java</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/05_JPA_Impl.JPG"><img alt="_images/05_JPA_Impl.JPG" src="_images/05_JPA_Impl.JPG" style="width: 660.8px; height: 507.2px;" /></a>
+</li>
+<li><p class="first">右下の「適用(A)」ボタンを押下します。</p>
+</li>
+<li><p class="first">「OK」ボタンを押下します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="xml">
+<h2>3.4. XML ファイルの削除<a class="headerlink" href="#xml" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>「プロジェクト・エクスプローラー」の「デプロイ済みリソース」内の「shainweb-ds.xml」を削除します。</p>
+<img alt="_images/shainweb-ds.png" src="_images/shainweb-ds.png" />
+<p>以上で、開発を進める準備が出来ました。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="04_JSF.html" title="4. JSF を用いた画面表示"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="02_Preparation.html" title="2. 準備"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Wing Education Group.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1 で生成しました。
+    </div>
+  </body>
+</html>
