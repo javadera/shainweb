@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="shainweb.css" />
+        <h:outputStylesheet library="css" name="default.css" />
+        <h:outputStylesheet library="css" name="cssLayout.css" />
+        <title>Shainweb Template</title>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <div id="top">
+                <ui:insert name="top"><ui:include src="top.xhtml" /></ui:insert>
+            </div>
+            <div>
+                <div id="left">
+                    <ui:insert name="left"><ui:include src="left.xhtml" /></ui:insert>
+                </div>
+                <div id="content" class="left_content">
+                    <ui:insert name="content">Content</ui:insert>
+                </div>
+            </div>
+            <div id="bottom">
+                <ui:insert name="bottom"><ui:include src="bottom.xhtml" /></ui:insert>
+            </div>
+        </h:form>
+
+    </h:body>
+
+</html>

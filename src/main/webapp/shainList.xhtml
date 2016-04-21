@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      template="/WEB-INF/template.xhtml">
+
+        <ui:define name="content">
+            <table>
+                <tr>
+                    <td><p:commandButton id="addNewShainButtonId" action="#{shainData.addEmp}" value="新規追加" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p:dataTable id="shainListDataTableId" var="e" value="#{shainList.empList}" emptyMessage="社員は存在しません。">
+                            <p:column headerText="社員番号" style="width:60px">
+                                <h:outputText value="#{e.shainId}"/>
+                            </p:column>
+
+                            <p:column headerText="氏名 (カナ)" style="width:200px">
+                                <h:outputText value="#{e.familyName} #{e.givenName} (#{e.familyNameKana} #{e.givenNameKana})"/>
+                            </p:column>
+
+                            <p:column headerText="メールアドレス" style="width:150px">
+                                <h:outputText value="#{e.email}"/>
+                            </p:column>
+
+                            <p:column headerText="電話番号 (携帯)">
+                                <h:outputText value="#{e.phoneNumber} (#{e.cellphoneNumber})"/>
+                            </p:column>
+
+                            <p:column headerText="住所">
+                                <h:outputText value="#{e.address}"/>
+                            </p:column>
+
+                            <p:column headerText="入社日" style="width:80px">
+                                <h:outputText value="#{e.joinDate}"/>
+                            </p:column>
+
+                            <p:column headerText="退社日" style="width:80px">
+                                <h:outputText value="#{e.quitDate}"/>
+                            </p:column>
+
+                            <p:column headerText="ロール" style="width:50px">
+                                <h:outputText value="#{e.roleMaster.roleName}"/>
+                            </p:column>
+
+                            <p:column headerText="編集/削除">
+                                <p:commandButton id="editEmpButtonId" action="#{shainData.editEmp(e)}" icon="ui-icon-wrench" title="更新"/>
+                                <p:commandButton id="changePasswordEmpButtonId" action="#{shainPassword.changePassword(e)}" icon="ui-icon-locked" title="パスワード更新"/>
+                                <p:commandButton id="deleteEmpButtonId" update="shainListDataTableId" actionListener="#{shainList.deleteEmp(e)}" onclick="return confirm('本当に削除しますか？')" icon="ui-icon-trash" title="削除"/>
+                            </p:column>
+                        </p:dataTable>
+                    </td>
+                </tr>
+            </table>
+        </ui:define>
+</ui:composition>

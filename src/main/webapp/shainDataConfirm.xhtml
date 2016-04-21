@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      template="/WEB-INF/template.xhtml">
+
+        <ui:define name="content">
+            <p:panelGrid id="shainDataConfirmPanelGridId" columns="2">
+                <p:outputLabel for="confirmShainIdOutputTextId" value="社員 ID" />
+                <h:outputText   id="confirmShainIdOutputTextId" value="#{shainData.emp.shainId}"/>
+                
+                <p:outputLabel for="confirmSeiOutputTextId" value="姓" />
+                <h:outputText   id="confirmSeiOutputTextId" value="#{shainData.emp.familyName}"/>
+
+                <p:outputLabel for="confirmSeiKanaOutputTextId" value="姓(カナ)" />
+                <h:outputText   id="confirmSeiKanaOutputTextId" value="#{shainData.emp.familyNameKana}"/>
+
+                <p:outputLabel for="confirmMeiOutputTextId" value="名" />
+                <h:outputText   id="confirmMeiOutputTextId" value="#{shainData.emp.givenName}"/>
+
+                <p:outputLabel for="confirmMeiKanaOutputTextId" value="名(カナ)" />
+                <h:outputText   id="confirmMeiKanaOutputTextId" value="#{shainData.emp.givenNameKana}"/>
+
+                <p:outputLabel for="confirmMailAddressOutputTextId" value="メールアドレス" />
+                <h:outputText   id="confirmMailAddressOutputTextId" value="#{shainData.emp.email}"/>
+
+                <p:outputLabel for="confirmRoleOutputTextId" value="ロール" />
+                <h:outputText   id="confirmRoleOutputTextId" value="#{shainData.roleString}"/>
+
+                <p:outputLabel for="confirmPhoneOutputTextId" value="電話番号(固定)" />
+                <h:outputText   id="confirmPhoneOutputTextId" value="#{shainData.emp.phoneNumber}"/>
+
+                <p:outputLabel for="confirmCellPhoneOutputTextId" value="電話番号(携帯)" />
+                <h:outputText   id="confirmCellPhoneOutputTextId" value="#{shainData.emp.cellphoneNumber}"/>
+
+                <p:outputLabel for="confirmAddressOutputTextAreaId" value="住所" />
+                <h:outputText   id="confirmAddressOutputTextAreaId" value="#{shainData.emp.address}"/>
+
+                <p:outputLabel for="confirmJoinDateOutputTextId" value="入社日" />
+                <h:outputText   id="confirmJoinDateOutputTextId" value="#{shainData.emp.joinDate}">
+                	<f:convertDateTime pattern="yyyy/MM/dd" timeZone="JST" />
+                </h:outputText>
+
+                <p:outputLabel for="confirmQuitDateOutputTextId" value="退社日" />
+                <h:outputText   id="confirmQuitDateOutputTextId" value="#{shainData.emp.quitDate}">
+                	<f:convertDateTime pattern="yyyy/MM/dd" timeZone="JST" />
+                </h:outputText>
+            </p:panelGrid>
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true"/>
+            <p:commandButton id="executeEmpButtonId" value="#{shainData.buttonCaption}" action="#{shainData.executeEmp}"/>
+            <p:button id="cancelAddEditConfirmButtonId" value="キャンセル" outcome="shainList"/>
+        </ui:define>
+</ui:composition>

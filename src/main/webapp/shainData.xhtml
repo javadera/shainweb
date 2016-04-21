@@ -1,0 +1,65 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      template="/WEB-INF/template.xhtml">
+
+        <ui:define name="content">
+            <p:panelGrid id="shainDataPanelGridId" columns="3">
+                <h:outputLabel for="shainIdInputTextId" value="社員 ID" />
+                <p:inputText    id="shainIdInputTextId" disabled="#{shainData.newStaff == false}" value="#{shainData.emp.shainId}"/>
+                <p:message     for="shainIdInputTextId"/>
+                
+                <p:outputLabel for="seiInputTextId" value="姓" />
+                <p:inputText id="seiInputTextId" value="#{shainData.emp.familyName}"/>
+                <p:message for="seiInputTextId" />
+
+                <p:outputLabel for="seiKanaInputTextId" value="姓(カナ)" />
+                <p:inputText id="seiKanaInputTextId" value="#{shainData.emp.familyNameKana}"/>
+                <p:message for="seiKanaInputTextId" />
+
+                <p:outputLabel for="meiInputTextId" value="名" />
+                <p:inputText id="meiInputTextId" value="#{shainData.emp.givenName}"/>
+                <p:message for="meiInputTextId" />
+
+                <p:outputLabel for="meiKanaInputTextId" value="名(カナ)" />
+                <p:inputText id="meiKanaInputTextId" value="#{shainData.emp.givenNameKana}"/>
+                <p:message for="meiKanaInputTextId" />
+
+                <p:outputLabel value="メールアドレス" />
+                <p:inputText id="mailAddressInputTextId" value="#{shainData.emp.email}"/>
+                <p:message for="mailAddressInputTextId" />
+
+                <p:outputLabel for="roleSelectOneRadioId" value="ロール" />
+                <p:selectOneRadio id="roleSelectOneRadioId" value="#{shainData.roleString}">
+                    <f:selectItems value="#{shainData.roleList}" var="r" itemLabel="#{r.roleName}" itemValue="#{r.roleName}"/>
+                </p:selectOneRadio>
+                <p:message for="roleSelectOneRadioId" />
+
+                <p:outputLabel for="phoneInputTextId" value="電話番号(固定)" />
+                <p:inputText id="phoneInputTextId" value="#{shainData.emp.phoneNumber}"/>
+                <p:message for="phoneInputTextId" />
+
+                <p:outputLabel for="cellPhoneInputTextId" value="電話番号(携帯)" />
+                <p:inputText id="cellPhoneInputTextId" value="#{shainData.emp.cellphoneNumber}"/>
+                <p:message for="cellPhoneInputTextId" />
+
+                <p:outputLabel for="addressInputTextAreaId" value="住所" />
+                <p:inputTextarea id="addressInputTextAreaId" rows="5" cols="30" maxlength="300" value="#{shainData.emp.address}"/>
+                <p:message for="addressInputTextAreaId" />
+
+                <p:outputLabel for="joinDateCalendarId" value="入社日" />
+                <p:calendar id="joinDateCalendarId" value="#{shainData.emp.joinDate}" pattern="yyyy/MM/dd"/>
+                <p:message for="joinDateCalendarId" />
+
+                <p:outputLabel for="quitDateCalendarId" value="退社日" />
+                <p:calendar id="quitDateCalendarId" value="#{shainData.emp.quitDate}" pattern="yyyy/MM/dd" />
+                <p:message for="quitDateCalendarId" />
+            </p:panelGrid>
+            <p:messages id="shainDataMessages" showDetail="true" autoUpdate="true" closable="true"/>
+            <p:commandButton id="showConfirmButtonId" value="#{shainData.buttonCaption}" action="#{shainData.executeEmp}" update="shainDataPanelGridId"/>
+            <p:button id="cancelAddEditButtonId" value="キャンセル" outcome="shainList"/>
+        </ui:define>
+</ui:composition>
