@@ -1,0 +1,2 @@
+# shainweb
+Java EE サンプルアプリケーションです。
