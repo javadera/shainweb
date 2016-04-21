@@ -6,4 +6,6 @@ DB は PostgreSQL を使用しています。
 
 アプリケーションサーバは WildFly 9.0.2.Final を想定しています。
 
+開発手順書は以下の URL を参照してください。
 
+http://javadera.github.io/shainweb/
