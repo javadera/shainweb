@@ -9,3 +9,5 @@ DB は PostgreSQL を使用しています。
 開発手順書は以下の URL を参照してください。
 
 http://javadera.github.io/shainweb/
+
+[![Build Status](https://travis-ci.org/javadera/shainweb.svg?branch=master)](https://travis-ci.org/javadera/shainweb)
