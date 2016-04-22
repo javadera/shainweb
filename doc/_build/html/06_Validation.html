@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>6. データバリデーション &mdash; WebAppTraining 1.0 ドキュメント</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="WebAppTraining 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="7. ログイン認証画面の追加" href="07_Auth.html" />
+    <link rel="prev" title="5. JPA, JSF を組み合わせたデータ操作" href="05_JPAJSF.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="07_Auth.html" title="7. ログイン認証画面の追加"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="05_JPAJSF.html" title="5. JPA, JSF を組み合わせたデータ操作"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6. データバリデーション</a><ul>
+<li><a class="reference internal" href="#id2">6.1. ソースコードの修正</a><ul>
+<li><a class="reference internal" href="#id3">6.1.1. 新規追加するソースコード</a><ul>
+<li><a class="reference internal" href="#validationmessage-ja">6.1.1.1. ValidationMessage_ja の作成方法</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">6.1.2. 修正するソースコード</a><ul>
+<li><a class="reference internal" href="#employee-java">6.1.2.1. Employee.java の修正</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">6.2. 動作確認</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="05_JPAJSF.html"
+                        title="前の章へ">5. JPA, JSF を組み合わせたデータ操作</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="07_Auth.html"
+                        title="次の章へ">7. ログイン認証画面の追加</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/06_Validation.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>6. データバリデーション<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>入力値に対するバリデーションを追加します。</p>
+<p>ここでは Bean Vaidation で定義されているバリデーション (NotNull、Size、Pattern など) を用いてデータのバリデーションを行います。
+また、もともと英語で設定されているエラーメッセージを ValidationMesasges で上書きします。</p>
+<div class="section" id="id2">
+<h2>6.1. ソースコードの修正<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、以下のファイルを新規追加します。</p>
+<ul class="simple">
+<li>ValidationMessages_ja.properties</li>
+</ul>
+<p>さらに、以下のソースコードを修正します。</p>
+<ul class="simple">
+<li>Employee.java</li>
+</ul>
+<div class="section" id="id3">
+<h3>6.1.1. 新規追加するソースコード<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>日本語のエラーメッセージを定義します。</p>
+<div class="section" id="validationmessage-ja">
+<h4>6.1.1.1. ValidationMessage_ja の作成方法<a class="headerlink" href="#validationmessage-ja" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ValidationMessage_ja.properties の中身は Unicode の表記です。
+JBoss ツール・プロパティ・エディターを用いて作成します。</p>
+<ol class="arabic">
+<li><p class="first">src/main/resources の直下に拡張子 ValidationMessages_ja.properties ファイルを新規作成します。</p>
+</li>
+<li><p class="first">作成したファイルを右クリックして「次で開く」から「JBoss ツール・プロパティ・エディター」を選択します。</p>
+</li>
+<li><p class="first">下の「プロパティ」タブを選択してプロパティの「追加」「編集」「削除」を右側のボタンで行います。</p>
+<a class="reference internal image-reference" href="_images/02_jbossEditor_01.png"><img alt="_images/02_jbossEditor_01.png" src="_images/02_jbossEditor_01.png" style="width: 670.6px; height: 247.1px;" /></a>
+</li>
+<li><p class="first">Unicode 表記は「ソース」タブで確認できます。</p>
+<a class="reference internal image-reference" href="_images/02_jbossEditor_02.png"><img alt="_images/02_jbossEditor_02.png" src="_images/02_jbossEditor_02.png" style="width: 669.2px; height: 245.7px;" /></a>
+</li>
+<li><p class="first">ソースコードを以下のように編集してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>shainData.shainId.pattern=\u793E\u54E1 ID \u306F\u3001AC000001\uFF5EAC999999 \u307E\u305F\u306F AF000001\uFF5EAF999999 \u3067\u3059\u3002
+shainData.kana.pattern=\u5168\u89D2\u30AB\u30CA\u306E\u307F\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002
+shainData.familyName.size = \u59d3\u306f {min} \u304b\u3089 {max} \u6587\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+shainData.familyNameKana.size = \u30bb\u30a4\u306f {min} \u304b\u3089 {max} \u6587\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+shainData.givenName.size = \u540d\u306f {min} \u304b\u3089 {max} \u6587\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+shainData.givenNameKana.size = \u30e1\u30a4\u306f {min} \u304b\u3089 {max} \u6587\u5b57\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+shainData.email.pattern = \u6709\u52b9\u306a email \u6587\u5b57\u5217\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002
+shainData.phoneNumber.pattern = 10 \u6841\u304B\u3089 12 \u6841\u3067\u96FB\u8A71\u756A\u53F7\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002
+shainData.cellPhoneNumber.pattern = 11 \u6841\u3067\u643A\u5E2F\u96FB\u8A71\u756A\u53F7\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002
+shainData.address.size = \u6709\u52b9\u306a\u4f4f\u6240\u6587\u5b57\u5217\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002
+shainData.date.notNull = \u5fc5\u9808\u9805\u76ee\u3067\u3059\u3002
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>6.1.2. 修正するソースコード<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="employee-java">
+<h4>6.1.2.1. Employee.java の修正<a class="headerlink" href="#employee-java" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Bean Validation を使用し上書きしたエラーメッセージを使用するようにします。
+以下のように修正してください。</p>
+<div class="highlight-python"><div class="highlight"><pre>package com.javadera.shainweb.model;
+// Generated 2016/01/20 13:45:58 by Hibernate Tools 4.3.1.Final
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+/**
+ * Employee generated by hbm2java
+ */
+@Entity
+@Table(name = &quot;employee&quot;, uniqueConstraints = @UniqueConstraint(columnNames = &quot;email&quot;) )
+@NamedQueries({
+    @NamedQuery(name=&quot;Employee.findAllOrderById&quot;, query=&quot;SELECT e FROM Employee e WHERE e.deleteFlag = 0 ORDER BY e.shainId&quot;),
+    @NamedQuery(name=&quot;Employee.findById&quot;,         query=&quot;SELECT e FROM Employee e WHERE e.shainId = :shainId&quot;)
+})
+public class Employee implements java.io.Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private String shainId;
+    private RoleMaster roleMaster;
+    private String familyName;
+    private String familyNameKana;
+    private String givenName;
+    private String givenNameKana;
+    private String email;
+    private String phoneNumber;
+    private String cellphoneNumber;
+    private String address;
+    private Date joinDate;
+    private Date quitDate;
+    private String password;
+    private Integer deleteFlag;
+
+    public Employee() {
+    }
+
+    public Employee(String shainId, RoleMaster roleMaster, String familyName, String familyNameKana, String givenName,
+            String givenNameKana, String email, String phoneNumber, String cellphoneNumber, String address,
+            Date joinDate, Date quitDate, String password) {
+        this.shainId = shainId;
+        this.roleMaster = roleMaster;
+        this.familyName = familyName;
+        this.familyNameKana = familyNameKana;
+        this.givenName = givenName;
+        this.givenNameKana = givenNameKana;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.cellphoneNumber = cellphoneNumber;
+        this.address = address;
+        this.joinDate = joinDate;
+        this.quitDate = quitDate;
+        this.password = password;
+    }
+
+    public Employee(String shainId, RoleMaster roleMaster, String familyName, String familyNameKana, String givenName,
+            String givenNameKana, String email, String phoneNumber, String cellphoneNumber, String address,
+            Date joinDate, Date quitDate, String password, Integer deleteFlag) {
+        this.shainId = shainId;
+        this.roleMaster = roleMaster;
+        this.familyName = familyName;
+        this.familyNameKana = familyNameKana;
+        this.givenName = givenName;
+        this.givenNameKana = givenNameKana;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.cellphoneNumber = cellphoneNumber;
+        this.address = address;
+        this.joinDate = joinDate;
+        this.quitDate = quitDate;
+        this.password = password;
+        this.deleteFlag = deleteFlag;
+    }
+
+    @Id
+    @Column(name = &quot;shain_id&quot;, unique = true, nullable = false, length = 20)
+    @NotNull(message=&quot;{shainData.shainId.pattern}&quot;)
+    @Pattern(regexp=&quot;A(F|C)[0-9]{6}&quot;, message=&quot;{shainData.shainId.pattern}&quot;)
+    public String getShainId() {
+        return this.shainId;
+    }
+
+    public void setShainId(String shainId) {
+        this.shainId = shainId;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = &quot;role_id&quot;, nullable = false)
+    public RoleMaster getRoleMaster() {
+        return this.roleMaster;
+    }
+
+    public void setRoleMaster(RoleMaster roleMaster) {
+        this.roleMaster = roleMaster;
+    }
+
+    @Column(name = &quot;family_name&quot;, nullable = false, length = 50)
+    @Size(min=1, max=20, message=&quot;{shainData.familyName.size}&quot;)
+    public String getFamilyName() {
+        return this.familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
+    }
+
+    @Column(name = &quot;family_name_kana&quot;, nullable = false, length = 50)
+    @Size(min=1, max=20, message=&quot;{shainData.familyNameKana.size}&quot;)
+    @Pattern(regexp=&quot;^[\\u30A0-\\u30FF]+$&quot;, message=&quot;{shainData.kana.pattern}&quot;)
+    public String getFamilyNameKana() {
+        return this.familyNameKana;
+    }
+
+    public void setFamilyNameKana(String familyNameKana) {
+        this.familyNameKana = familyNameKana;
+    }
+
+    @Column(name = &quot;given_name&quot;, nullable = false, length = 50)
+    @Size(min=1, max=20, message=&quot;{shainData.givenName.size}&quot;)
+    public String getGivenName() {
+        return this.givenName;
+    }
+
+    public void setGivenName(String givenName) {
+        this.givenName = givenName;
+    }
+
+    @Column(name = &quot;given_name_kana&quot;, nullable = false, length = 50)
+    @Size(min=1, max=20, message=&quot;{shainData.givenNameKana.size}&quot;)
+    @Pattern(regexp=&quot;^[\\u30A0-\\u30FF]+$&quot;, message=&quot;{shainData.kana.pattern}&quot;)
+    public String getGivenNameKana() {
+        return this.givenNameKana;
+    }
+
+    public void setGivenNameKana(String givenNameKana) {
+        this.givenNameKana = givenNameKana;
+    }
+
+    @Column(name = &quot;email&quot;, unique = true, nullable = false, length = 50)
+    @Pattern(regexp=&quot;[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&amp;&#39;*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?&quot;,  message=&quot;{shainData.email.pattern}&quot;)
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Column(name = &quot;phone_number&quot;, nullable = false, length = 50)
+    @Pattern(regexp=&quot;[0-9]{10,12}&quot;,  message=&quot;{shainData.phoneNumber.pattern}&quot;)
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    @Column(name = &quot;cellphone_number&quot;, nullable = false, length = 50)
+    @Pattern(regexp=&quot;[0-9]{11}&quot;,  message=&quot;{shainData.cellPhoneNumber.pattern}&quot;)
+    public String getCellphoneNumber() {
+        return this.cellphoneNumber;
+    }
+
+    public void setCellphoneNumber(String cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
+    }
+
+    @Column(name = &quot;address&quot;, nullable = false, length = 300)
+    @Size(min=1, message=&quot;{shainData.address.size}&quot;)
+    public String getAddress() {
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = &quot;join_date&quot;, nullable = false, length = 13)
+    @NotNull(message=&quot;{shainData.date.notNull}&quot;)
+    public Date getJoinDate() {
+        return this.joinDate;
+    }
+
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = &quot;quit_date&quot;, nullable = false, length = 13)
+    @NotNull(message=&quot;{shainData.date.notNull}&quot;)
+    public Date getQuitDate() {
+        return this.quitDate;
+    }
+
+    public void setQuitDate(Date quitDate) {
+        this.quitDate = quitDate;
+    }
+
+    @Column(name = &quot;password&quot;, nullable = false)
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Column(name = &quot;delete_flag&quot;)
+    public Integer getDeleteFlag() {
+        return this.deleteFlag;
+    }
+
+    public void setDeleteFlag(Integer deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>6.2. 動作確認<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>修正後、デバッグ実行して社員一覧画面から「新規追加」ボタンを押下し、社員データ画面でデータを入力せず「追加」ボタンを押下してください。</p>
+<p>バリデーションが掛かってデータ入力を促されます。</p>
+<a class="reference internal image-reference" href="_images/01_validation_Ja.png"><img alt="_images/01_validation_Ja.png" src="_images/01_validation_Ja.png" style="width: 592.2px; height: 366.0px;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="07_Auth.html" title="7. ログイン認証画面の追加"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="05_JPAJSF.html" title="5. JPA, JSF を組み合わせたデータ操作"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, javadera.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1 で生成しました。
+    </div>
+<script type="text/javascript">
+<!--
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76729087-1', 'auto');
+  ga('send', 'pageview');
+-->
+</script>
+
+  </body>
+</html>

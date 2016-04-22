@@ -1,0 +1,31 @@
+.. WebAppTraining documentation master file, created by
+   sphinx-quickstart on Mon Dec 21 09:58:31 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Java EE アプリケーション開発ドキュメント
+=====================================================================
+
+目次:
+
+.. toctree::
+   :maxdepth: 3
+   :numbered:
+   
+   01_Specification.txt
+   02_Preparation.txt
+   03_CreateProject.txt
+   04_JSF.txt
+   05_JPAJSF.txt
+   06_Validation.txt
+   07_Auth.txt
+   08_Test.txt
+
+
+インデックス
+=====================================================================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

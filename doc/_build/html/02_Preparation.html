@@ -1,0 +1,821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. 準備 &mdash; WebAppTraining 1.0 ドキュメント</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="WebAppTraining 1.0 ドキュメント" href="index.html" />
+    <link rel="next" title="3. プロジェクトの作成" href="03_CreateProject.html" />
+    <link rel="prev" title="1. 説明" href="01_Specification.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="03_CreateProject.html" title="3. プロジェクトの作成"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="01_Specification.html" title="1. 説明"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">目次</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. 準備</a><ul>
+<li><a class="reference internal" href="#id2">2.1. フォルダ構成</a></li>
+<li><a class="reference internal" href="#apache-maven">2.2. Apache Maven のインストール</a><ul>
+<li><a class="reference internal" href="#id5">2.2.1. パスを設定する</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#eclipse-pleiades">2.3. Eclipse Pleiades のインストールと起動</a></li>
+<li><a class="reference internal" href="#eclipse">2.4. Eclipse プラグインのインストール</a></li>
+<li><a class="reference internal" href="#postgresql">2.5. PostgreSQL のインストール</a><ul>
+<li><a class="reference internal" href="#jdbc">2.5.1. JDBC ドライバのダウンロード</a></li>
+<li><a class="reference internal" href="#id6">2.5.2. データベースの作成</a></li>
+<li><a class="reference internal" href="#createtable">2.5.3. テーブルの作成</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wildfly">2.6. WildFly のインストール</a><ul>
+<li><a class="reference internal" href="#id8">2.6.1. 管理者ユーザの登録</a></li>
+<li><a class="reference internal" href="#id9">2.6.2. 管理コンソールの起動と確認</a></li>
+<li><a class="reference internal" href="#id10">2.6.3. JDBC ドライバの追加</a></li>
+<li><a class="reference internal" href="#id11">2.6.4. データソースの追加</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#eclipse-wildfly">2.7. Eclipse 上での WildFly サーバ登録</a></li>
+<li><a class="reference internal" href="#eclipse-postgresql">2.8. Eclipse 上での PostgreSQL データ・ソース・エクスプローラー登録</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>前のトピックへ</h4>
+  <p class="topless"><a href="01_Specification.html"
+                        title="前の章へ">1. 説明</a></p>
+  <h4>次のトピックへ</h4>
+  <p class="topless"><a href="03_CreateProject.html"
+                        title="次の章へ">3. プロジェクトの作成</a></p>
+  <div role="note" aria-label="source link">
+    <h3>このページ</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/02_Preparation.txt"
+            rel="nofollow">ソースコードを表示</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>クイック検索</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="検索" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    モジュール、クラス、または関数名を入力してください
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>2. 準備<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id2">
+<h2>2.1. フォルダ構成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>作業を進めるにあたり、皆さんのフォルダ構成を統一します。
+全員のフォルダをそろえることにより、トラブルシューティングを容易にする目的があります。</p>
+<p>以下の表に示したフォルダを作成してください。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">作成するフォルダ</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>C:\tool</td>
+<td>開発に必要となるアプリケーションを保存するフォルダです。「tool フォルダ」と呼びます。</td>
+</tr>
+<tr class="row-odd"><td>C:\works</td>
+<td>開発作業の成果物を保存するフォルダです。「works フォルダ」と呼びます。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="apache-maven">
+<h2>2.2. Apache Maven のインストール<a class="headerlink" href="#apache-maven" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p id="index-0"><a class="reference external" href="https://ja.wikipedia.org/wiki/Apache_Maven">Apache Maven</a> は Java プロジェクトのライフサイクルを管理するツールです。またライブラリの依存関係も解決してくれます。
+<a class="reference external" href="https://maven.apache.org/download.cgi">ダウンロードページ</a> から取得してください。</p>
+<p>以下の図では、バージョン 3.3.9 を取得しています。</p>
+<a class="reference internal image-reference" href="_images/01_MavenDownload.JPG"><img alt="_images/01_MavenDownload.JPG" src="_images/01_MavenDownload.JPG" style="width: 671.3px; height: 219.8px;" /></a>
+<p>tool フォルダに、フォルダ名「maven」として解凍してください。</p>
+<div class="section" id="id5">
+<h3>2.2.1. パスを設定する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>コマンドラインから Maven を実行するためにパスを設定します。</p>
+<ol class="arabic">
+<li><p class="first">エクスプローラを起動します。</p>
+</li>
+<li><p class="first">左ペインから「コンピュータ」を右クリックし「プロパティ」を選択します。</p>
+<a class="reference internal image-reference" href="_images/02_Computerのプロパティ.JPG"><img alt="_images/02_Computerのプロパティ.JPG" src="_images/02_Computerのプロパティ.JPG" style="width: 273.6px; height: 198.4px;" /></a>
+</li>
+<li><p class="first">左上にある「システムの詳細設定」を選択します。</p>
+</li>
+<li><p class="first">システムのプロパティ ダイアログの「詳細設定」タブから「環境変数」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/03_システムのプロパティ_環境変数.JPG"><img alt="_images/03_システムのプロパティ_環境変数.JPG" src="_images/03_システムのプロパティ_環境変数.JPG" style="width: 386.4px; height: 343.2px;" /></a>
+</li>
+<li><p class="first">「環境変数」ダイアログの「システム環境変数(S)」で「Path」を選択し、「編集」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/04_パス編集ボタン.JPG"><img alt="_images/04_パス編集ボタン.JPG" src="_images/04_パス編集ボタン.JPG" style="width: 357.6px; height: 314.4px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">表示される「システム変数の編集」ダイアログにおいて以下の表の文字列を追記します。</div>
+<div class="line">最初にセミコロンが付いています。これは区切り文字なので忘れずに追加してください。</div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">追記する文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>変数値(V)</td>
+<td>;C:\tool\maven\bin</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first">「OK」ボタンを押下して設定終了します。</p>
+</li>
+<li><p class="first">「Windows キー ＋ R」を押下して「ファイル名を指定して実行」ダイアログを表示します。</p>
+</li>
+<li><p class="first">「cmd」と入力して「OK」を押下します。</p>
+<a class="reference internal image-reference" href="_images/06_cmd.JPG"><img alt="_images/06_cmd.JPG" src="_images/06_cmd.JPG" style="width: 322.4px; height: 187.2px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">コマンドラインのウィンドウで以下を入力して Enter キーを押下します。</div>
+<div class="line">mvn -version</div>
+</div>
+</li>
+<li><p class="first">Maven のバージョン情報が表示されることを確認します。下記に例を示します。</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt;mvn -version
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-11T01:41:47+09:00)
+Maven home: C:\tool\maven\bin\..
+Java version: 1.7.0_51, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.7.0_51\jre
+Default locale: ja_JP, platform encoding: MS932
+OS name: &quot;windows 7&quot;, version: &quot;6.1&quot;, arch: &quot;amd64&quot;, family: &quot;windows&quot;
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="eclipse-pleiades">
+<h2>2.3. Eclipse Pleiades のインストールと起動<a class="headerlink" href="#eclipse-pleiades" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="http://mergedoc.osdn.jp/index.html#/pleiades.html">Pleiades - Eclipse プラグイン日本語化プラグイン</a> から Mars の <a class="reference external" href="http://mergedoc.osdn.jp/pleiades-redirect/4.5/pleiades_ultimate_jre.zip.html?v=20151002">64bit Full Edition</a> をダウンロードしてください。
+ダウンロードが完了したら、tool フォルダに、フォルダ名「pleiades」で解凍してください。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\pleiades\eclipse 内の eclipse.exe を起動します。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">「ワークスペース・ランチャー」で「ワークスペース(W)」に以下のパスを指定します。</div>
+<div class="line-block">
+<div class="line">C:\works\sampleWS</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="_images/01_workSpaceLauncher.JPG"><img alt="_images/01_workSpaceLauncher.JPG" src="_images/01_workSpaceLauncher.JPG" style="width: 432.6px; height: 157.5px;" /></a>
+</li>
+<li><p class="first">「OK」ボタンを押下します。</p>
+</li>
+<li><p class="first">Eclipse が起動します。</p>
+</li>
+</ol>
+<p>Eclipse を起動したまま、プラグインのインストールを行います。</p>
+</div>
+<div class="section" id="eclipse">
+<h2>2.4. Eclipse プラグインのインストール<a class="headerlink" href="#eclipse" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Eclipse を起動して、プラグインをインストールします。</p>
+<ol class="arabic">
+<li><p class="first">メニューバーの「ヘルプ(H)」から「Eclipse マーケットプレース」を選択します。</p>
+<a class="reference internal image-reference" href="_images/02_eclipseMarketPlace.JPG"><img alt="_images/02_eclipseMarketPlace.JPG" src="_images/02_eclipseMarketPlace.JPG" style="width: 394.4px; height: 282.4px;" /></a>
+</li>
+<li><p class="first">「Eclipse マーケットプレース」画面の「検索(I):」に「jboss」と入力して「実行」ボタンを押下します。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">「Red Hat JBoss Developer Studio 9.0.0.GA」をインストールしてください。</div>
+<div class="line">インストールには右下の「インストール」ボタンを押下します。</div>
+</div>
+<a class="reference internal image-reference" href="_images/03_jbossDevStudio.JPG"><img alt="_images/03_jbossDevStudio.JPG" src="_images/03_jbossDevStudio.JPG" style="width: 436.0px; height: 530.4px;" /></a>
+</li>
+<li><p class="first">「選択されたフィーチャーの確認」画面で「確認(C)&gt;」ボタンを押下します。</p>
+</li>
+<li><p class="first">「ライセンスのレビュー」画面で「使用条件の条項に同意します(A)」を選択し「完了(F)」ボタンを押下します。</p>
+</li>
+<li><p class="first">インストールが開始されます。進捗は画面右下に表示されます。</p>
+</li>
+<li><p class="first">途中で以下の「セキュリティ警告」ダイアログが表示されます、「OK」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/04_04_proceedInstall.JPG"><img alt="_images/04_04_proceedInstall.JPG" src="_images/04_04_proceedInstall.JPG" style="width: 364.8px; height: 104.8px;" /></a>
+</li>
+<li><p class="first">「ソフトウェア更新」ダイアログが表示されます。「はい(Y)」ボタンを押下して Eclipse を再起動します。</p>
+<a class="reference internal image-reference" href="_images/04_05_restart.JPG"><img alt="_images/04_05_restart.JPG" src="_images/04_05_restart.JPG" style="width: 352.8px; height: 100.0px;" /></a>
+</li>
+<li><p class="first">再起動後、「JBoss Developer Studio Usage」ダイアログが表示されます。「はい(Y)」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_usage.JPG"><img alt="_images/05_usage.JPG" src="_images/05_usage.JPG" style="width: 259.2px; height: 92.0px;" /></a>
+</li>
+</ol>
+<p>以上で、プラグインのインストールは終了です。</p>
+</div>
+<div class="section" id="postgresql">
+<h2>2.5. PostgreSQL のインストール<a class="headerlink" href="#postgresql" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p id="index-1">フリーの RDBMS である <a class="reference external" href="http://www.enterprisedb.com/postgresql-945-installers-win64?ls=Crossover&amp;type=Crossover">PostgreSQL 9.4.5</a> をダウンロードしてください。</p>
+<p>ダウンロードが完了したら、実行してウィザードに従ってインストールします。</p>
+<ol class="arabic">
+<li><p class="first">ファイルをダブルクリックし、「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/01_Top.JPG"><img alt="_images/01_Top.JPG" src="_images/01_Top.JPG" style="width: 390.6px; height: 298.9px;" /></a>
+</li>
+<li><p class="first">「Installation Directory」画面が表示されます。変更せず「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/02_InstallationDirectory.JPG"><img alt="_images/02_InstallationDirectory.JPG" src="_images/02_InstallationDirectory.JPG" style="width: 390.6px; height: 298.9px;" /></a>
+</li>
+<li><p class="first">「Data Directory」画面が表示されます。変更せず「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/03_DataDirectory.JPG"><img alt="_images/03_DataDirectory.JPG" src="_images/03_DataDirectory.JPG" style="width: 390.6px; height: 298.9px;" /></a>
+</li>
+<li><p class="first">「Password」画面が表示されます。「pass#1234」を登録してください。</p>
+<a class="reference internal image-reference" href="_images/04_Password.JPG"><img alt="_images/04_Password.JPG" src="_images/04_Password.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">「Port」画面が表示されます。変更せず「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/05_portNum.JPG"><img alt="_images/05_portNum.JPG" src="_images/05_portNum.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">「Port」画面が表示されます。変更せず「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/05_portNum.JPG"><img alt="_images/05_portNum.JPG" src="_images/05_portNum.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">「Advanced Option」画面が表示されます。変更せず「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/06_defaultLocale.JPG"><img alt="_images/06_defaultLocale.JPG" src="_images/06_defaultLocale.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">「Ready To Install」画面が表示されます。「Next&gt;」を押下します。</p>
+<a class="reference internal image-reference" href="_images/07_ready.JPG"><img alt="_images/07_ready.JPG" src="_images/07_ready.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">インストールが開始されます。</p>
+<a class="reference internal image-reference" href="_images/08_Installing.JPG"><img alt="_images/08_Installing.JPG" src="_images/08_Installing.JPG" style="width: 390.6px; height: 299.6px;" /></a>
+</li>
+<li><p class="first">インストールが完了したら、チェックボックスのチェックを外して「Finish」を押下します。</p>
+<a class="reference internal image-reference" href="_images/09_complete.JPG"><img alt="_images/09_complete.JPG" src="_images/09_complete.JPG" style="width: 390.6px; height: 298.9px;" /></a>
+</li>
+</ol>
+<div class="section" id="jdbc">
+<h3>2.5.1. JDBC ドライバのダウンロード<a class="headerlink" href="#jdbc" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p id="index-2"><a class="reference external" href="https://jdbc.postgresql.org/download/postgresql-9.4-1206-jdbc41.jar">JDBC Driver ダウンロード URL</a> から PostgreSQL の JDBC ドライバをダウンロードしてください。
+ダウンロードしたファイルを tool フォルダに保存してください。</p>
+</div>
+<div class="section" id="id6">
+<h3>2.5.2. データベースの作成<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">&#8220;C:\Program Files\PostgreSQL\9.4\bin\pgAdmin3.exe&#8221; を実行します。</p>
+</li>
+<li><p class="first">左ペインから「PostgreSQL 9.4」に接続します。パスワード入力を促されたらインストール時に設定したパスワードを入力します。</p>
+</li>
+<li><p class="first">「データベース」を右クリックし「新規オブジェクト」「新しいデータベース...」を選択します。</p>
+<a class="reference internal image-reference" href="_images/01_createDB.JPG"><img alt="_images/01_createDB.JPG" src="_images/01_createDB.JPG" style="width: 50%;" /></a>
+</li>
+<li><p class="first">「新しいデータベース」ウィンドウで「プロパティ」タブで「名前」に「shainweb」を指定して「OK」を押下します。</p>
+<a class="reference internal image-reference" href="_images/02_shainweb.JPG"><img alt="_images/02_shainweb.JPG" src="_images/02_shainweb.JPG" style="width: 50%;" /></a>
+</li>
+<li><p class="first">F5 を押下して、左ペインで「shainweb」データベースが追加されていることを確認します。</p>
+<a class="reference internal image-reference" href="_images/03_complete.JPG"><img alt="_images/03_complete.JPG" src="_images/03_complete.JPG" style="width: 50%;" /></a>
+</li>
+</ol>
+<p>pgAdmin を起動したまま、テーブルの作成を行います。</p>
+</div>
+<div class="section" id="createtable">
+<span id="id7"></span><h3>2.5.3. テーブルの作成<a class="headerlink" href="#createtable" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>pgAdmin を起動して、テーブルの作成を行います。</p>
+<ol class="arabic">
+<li><p class="first">メニューバーの「ツール(T)」を選択し「クエリツール」を選択します。</p>
+</li>
+<li><p class="first">中央上部にある接続先が「shainweb の postgres&#64;localhost:5432」であることを確認します。</p>
+<img alt="_images/05_connDb.JPG" src="_images/05_connDb.JPG" />
+</li>
+<li><p class="first">「SQL エディタ」に下記のテーブル定義文を入力します。</p>
+</li>
+<li><p class="first">メニューバーの「クエリー(Q)」を選択し「実行(E)」を選択します。</p>
+</li>
+<li><p class="first">「出力ビュー」のメッセージでエラーがないことを確認し、クエリツールを終了します。</p>
+<img alt="_images/06_success.JPG" src="_images/06_success.JPG" />
+</li>
+<li><p class="first">pgAdmin で F5 を押下し左ペインで 3 テーブルが作成されていることを確認します。</p>
+<img alt="_images/07_tableCreated.png" src="_images/07_tableCreated.png" />
+</li>
+</ol>
+<p>入力する SQL 文</p>
+<div class="highlight-python"><div class="highlight"><pre>-- ロールマスタテーブル --
+CREATE TABLE role_master
+(
+  role_id serial NOT NULL,
+  role_name character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  CONSTRAINT role_master_pkey PRIMARY KEY (role_id),
+  CONSTRAINT role_master_role_name_key UNIQUE (role_name)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE role_master
+  OWNER TO postgres;
+
+INSERT INTO role_master(role_name) VALUES(&#39;USER&#39;);
+INSERT INTO role_master(role_name) VALUES(&#39;ADMIN&#39;);
+COMMIT;
+
+
+-- 社員テーブル --
+CREATE TABLE employee
+(
+  shain_id character varying(20) NOT NULL,
+  family_name character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  family_name_kana character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  given_name character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  given_name_kana character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  email character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  phone_number character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  cellphone_number character varying(50) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  address character varying(300) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  join_date date NOT NULL DEFAULT (&#39;now&#39;::text)::date,
+  quit_date date NOT NULL DEFAULT to_date(&#39;9999/12/31&#39;::text, &#39;YYYY/MM/DD&#39;::text),
+  password character varying (255) NOT NULL DEFAULT &#39;N/A&#39;::character varying,
+  role_id integer NOT NULL DEFAULT 1,
+  delete_flag integer NOT NULL DEFAULT 0,
+  CONSTRAINT employee_pkey PRIMARY KEY (shain_id),
+  CONSTRAINT employee_email_key UNIQUE (email),
+  CONSTRAINT employee_chk_deleteflag CHECK (delete_flag = ANY (ARRAY[0, 1])),
+  CONSTRAINT employee_fk_roleid FOREIGN KEY (role_id) REFERENCES role_master(role_id) ON UPDATE CASCADE ON DELETE SET DEFAULT
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE employee
+  OWNER TO postgres;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="wildfly">
+<h2>2.6. WildFly のインストール<a class="headerlink" href="#wildfly" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p id="index-3">Redhat が提供するフリーの Java EE アプリケーションサーバ <a class="reference external" href="http://download.jboss.org/wildfly/9.0.2.Final/wildfly-9.0.2.Final.zip">WildFly 9.0.2</a> をダウンロードしてください。</p>
+<p>ダウンロードが完了したら、tool フォルダに、フォルダ名「wildfly-9.0.2.Final」で解凍してください。以上でインストールは終了です。</p>
+<div class="section" id="id8">
+<h3>2.6.1. 管理者ユーザの登録<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アプリケーションサーバの管理者ユーザを登録します。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\wildfly-9.0.2.Final\bin をエクスプローラで開きます。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">add-user.bat をダブルクリックすると以下の画面が出力されます。</div>
+<div class="line">セキュリティの警告ダイアログが表示される場合は、チェックを外して「実行」を押下します。</div>
+<div class="line">以下のメッセージが表示されます。</div>
+</div>
+<a class="reference internal image-reference" href="_images/01_addUser.JPG"><img alt="_images/01_addUser.JPG" src="_images/01_addUser.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">何も入力せず Enter キーを押下します。</p>
+</li>
+<li><p class="first">ユーザ名の入力を促されます。「admin」を入力して Enter キーを押下します。</p>
+<a class="reference internal image-reference" href="_images/02_userName.JPG"><img alt="_images/02_userName.JPG" src="_images/02_userName.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">本当に作成するか否かを聞かれるので「yes」を入力し Enter キーを押下します。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">設定するパスワードを聞かれるので「pass#1234」を入力し、Enter キーを押下します。</div>
+<div class="line">「Re-enter Password」でパスワード確認されるので同じパスワードを入力し、Enter キーを押下します。</div>
+</div>
+<a class="reference internal image-reference" href="_images/03_password.JPG"><img alt="_images/03_password.JPG" src="_images/03_password.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">所属グループを設定します。何も入力せず Enter キーを押下します。</p>
+</li>
+<li><p class="first">ユーザ追加確認メッセージが表示されます。「yes」を入力し Enter キーを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_confirm.JPG"><img alt="_images/05_confirm.JPG" src="_images/05_confirm.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">ユーザ追加終了メッセージが出力され、他のアプリケーションサーバプロセスを呼び出すユーザか否かの確認メッセージが表示されます。</p>
+</li>
+<li><p class="first">「no」を入力し Enter キーを押下します。</p>
+</li>
+<li><p class="first">「続行するには何かキーを押してください」が表示されます。Enter キーを押下しコマンドを終了させます。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h3>2.6.2. 管理コンソールの起動と確認<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p id="index-4">WildFly を起動して、PostgreSQL の JDBC ドライバを追加します。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\wildfly-9.0.2.Final\bin をエクスプローラで開きます。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">standalone.bat をダブルクリックします。</div>
+<div class="line">セキュリティの警告ダイアログが表示される場合は、チェックを外して「実行」を押下します。</div>
+</div>
+</li>
+<li><p class="first">コマンドラインのウィンドウが表示され起動が開始されます。5 秒ほど待って「WildFly Full 9.0.2.Final (WildFly Core 1.0.2.Final) started」のメッセージが出力されていることを確認します。</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://localhost:9990">http://localhost:9990</a> をブラウザで開きます。</p>
+</li>
+<li><p class="first">ユーザ名「admin」、パスワード「pass#1234」を入力してログインできることを確認します。</p>
+<a class="reference internal image-reference" href="_images/07_managementConsole.JPG"><img alt="_images/07_managementConsole.JPG" src="_images/07_managementConsole.JPG" style="width: 70%;" /></a>
+</li>
+</ol>
+<p>WildFly を起動したまま、次の JDBC ドライバの追加を行ってください。</p>
+</div>
+<div class="section" id="id10">
+<h3>2.6.3. JDBC ドライバの追加<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>WildFly を起動して、PostgreSQL の JDBC ドライバを追加します。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\wildfly-9.0.2.Final\bin をエクスプローラで開きます。</p>
+</li>
+<li><div class="first line-block">
+<div class="line">jboss-cli.bat をダブルクリックします。</div>
+<div class="line">セキュリティの警告ダイアログが表示される場合は、チェックを外して「実行」を押下します。</div>
+</div>
+</li>
+<li><p class="first">「connect」を入力し、Enter キーを押下します。</p>
+</li>
+<li><p class="first">以下を入力し Enter キーを押下します。</p>
+<div class="highlight-python"><div class="highlight"><pre>module add --name=org.postgres --resources=C:\tool\postgresql-9.4-1206-jdbc41.jar --dependencies=javax.api,javax.transaction.api
+</pre></div>
+</div>
+</li>
+<li><p class="first">以下を入力し Enter キーを押下します。</p>
+<div class="highlight-python"><div class="highlight"><pre>/subsystem=datasources/jdbc-driver=postgres:add(driver-name=&quot;postgres&quot;,driver-module-name=&quot;org.postgres&quot;,driver-class-name=org.postgresql.Driver)
+</pre></div>
+</div>
+</li>
+<li><p class="first">{&#8220;outcome&#8221; =&gt; &#8220;success&#8221;} が表示されることを確認します。</p>
+</li>
+<li><p class="first">「exit」を入力して Enter キーを押下します。</p>
+</li>
+<li><p class="first">「続行するには何かキーを押してください」が表示されます。Enter キーを押下しコマンドを終了させます。</p>
+</li>
+</ol>
+<p>WildFly を起動したまま、次のデータソースの追加を行ってください。</p>
+</div>
+<div class="section" id="id11">
+<h3>2.6.4. データソースの追加<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>WildFly を起動して PostgreSQL 上に作成したデータベースに接続するための設定を行います。</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference external" href="http://localhost:9990">管理コンソール</a> をブラウザで開き、右上部の「Configuration」のリンクをクリックします。</p>
+<a class="reference internal image-reference" href="_images/01_consoleTop.JPG"><img alt="_images/01_consoleTop.JPG" src="_images/01_consoleTop.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">「Subsystem」-&gt;「DataSources」-&gt;「Non-XA」を開き、「Add」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/02_subSystem_datasource_nonxa.JPG"><img alt="_images/02_subSystem_datasource_nonxa.JPG" src="_images/02_subSystem_datasource_nonxa.JPG" style="width: 70%;" /></a>
+</li>
+<li><p class="first">「Create Datasource」で「PostgreSQL Datasource」を選択し、「Next&gt;&gt;」をクリックします。</p>
+<a class="reference internal image-reference" href="_images/03_01_createDatasource.JPG"><img alt="_images/03_01_createDatasource.JPG" src="_images/03_01_createDatasource.JPG" style="width: 40%;" /></a>
+</li>
+<li><p class="first">「Step 1/3: Datasource Attributes」で「Name:」と「JNDI Name:」を次のように指定し、「Next&gt;&gt;」をクリックします。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name:</td>
+<td>ShainwebDS</td>
+</tr>
+<tr class="row-odd"><td>JNDI Name:</td>
+<td>java:jboss/datasources/ShainwebDS</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first">「Step 2/3: JDBC Driver」で「Detected Driver」タブで「postgres」を選択し、「Next&gt;&gt;」をクリックします。</p>
+<a class="reference internal image-reference" href="_images/03_03_JDBCDriver.JPG"><img alt="_images/03_03_JDBCDriver.JPG" src="_images/03_03_JDBCDriver.JPG" style="width: 40%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first">「Step 3/3: Connection Settings」で以下のように指定します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Connection URL:</td>
+<td>jdbc:postgresql://localhost:5432/shainweb</td>
+</tr>
+<tr class="row-odd"><td>Username:</td>
+<td>postgres</td>
+</tr>
+<tr class="row-even"><td>Password:</td>
+<td>PostgreSQL インストール時に設定したパスワード</td>
+</tr>
+<tr class="row-odd"><td>Security Domain:</td>
+<td>(空欄)</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/03_04_connectionSetting.JPG"><img alt="_images/03_04_connectionSetting.JPG" src="_images/03_04_connectionSetting.JPG" style="width: 40%;" /></a>
+</li>
+<li><p class="first">「Test Connection」をクリックして、接続が成功することを確認します。</p>
+<a class="reference internal image-reference" href="_images/03_05_testConnection.JPG"><img alt="_images/03_05_testConnection.JPG" src="_images/03_05_testConnection.JPG" style="width: 40%;" /></a>
+</li>
+<li><p class="first">「Done」をクリックして追加されたことを確認します。</p>
+<a class="reference internal image-reference" href="_images/04_done.JPG"><img alt="_images/04_done.JPG" src="_images/04_done.JPG" style="width: 70%;" /></a>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="eclipse-wildfly">
+<h2>2.7. Eclipse 上での WildFly サーバ登録<a class="headerlink" href="#eclipse-wildfly" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Eclipse から WildFly を起動するために登録を行います。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\pleiades\eclipse 内の eclipse.exe を起動します。</p>
+</li>
+<li><p class="first">下のタブにある「サーバー」を選択します。</p>
+<a class="reference internal image-reference" href="_images/01_tab.JPG"><img alt="_images/01_tab.JPG" src="_images/01_tab.JPG" style="width: 651.2px; height: 162.4px;" /></a>
+</li>
+<li><p class="first">「使用可能なサーバーがありません・・・」をクリックして、「新規サーバー」ダイアログを表示させます。</p>
+<a class="reference internal image-reference" href="_images/02_newServer.JPG"><img alt="_images/02_newServer.JPG" src="_images/02_newServer.JPG" style="width: 388.8px; height: 453.6px;" /></a>
+</li>
+<li><p class="first">以下の値を選択し、「次へ(N)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定する値もしくは文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>サーバーのタイプを選択(S):</td>
+<td>WildFly 9.x</td>
+</tr>
+<tr class="row-odd"><td>サーバーのホスト名(H):</td>
+<td>localhost</td>
+</tr>
+<tr class="row-even"><td>サーバー名(M):</td>
+<td>WildFly-9.0.2.Final</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/03_902F.JPG"><img alt="_images/03_902F.JPG" src="_images/03_902F.JPG" style="width: 388.8px; height: 453.6px;" /></a>
+</li>
+<li><p class="first">「新規 JBoss サーバーを作成します」画面が表示されます。何も変更せず「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/04_createServer.JPG"><img alt="_images/04_createServer.JPG" src="_images/04_createServer.JPG" style="width: 502.4px; height: 453.6px;" /></a>
+</li>
+<li><p class="first">「JBoss ランタイム」画面が表示されます。以下の値を設定します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定する値もしくは文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>名前</td>
+<td>WildFly-9.0.2.Final</td>
+</tr>
+<tr class="row-odd"><td>ホーム・ディレクトリー</td>
+<td>C:toolwildfly-9.0.2.Final</td>
+</tr>
+<tr class="row-even"><td>ランタイム JRE</td>
+<td>「実行環境」「JavaSE-1.8」</td>
+</tr>
+<tr class="row-odd"><td>サーバー･ベース・ディレクトリー</td>
+<td>standalone</td>
+</tr>
+<tr class="row-even"><td>構成ファイル</td>
+<td>standalone.xml</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/05_runtime.JPG"><img alt="_images/05_runtime.JPG" src="_images/05_runtime.JPG" style="width: 502.4px; height: 453.6px;" /></a>
+</li>
+<li><p class="first">「追加および除去」画面が表示されます。「完了(F)」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/06_addRemove.JPG"><img alt="_images/06_addRemove.JPG" src="_images/06_addRemove.JPG" style="width: 502.4px; height: 453.6px;" /></a>
+</li>
+<li><p class="first">「サーバー」タブに「WildFly-9.0.2.Final」が追加されます。</p>
+<a class="reference internal image-reference" href="_images/07_added.JPG"><img alt="_images/07_added.JPG" src="_images/07_added.JPG" style="width: 648.0px; height: 156.8px;" /></a>
+</li>
+<li><p class="first">「WildFly-9.0.2.Final」を右クリックして「開始」を選択します。</p>
+<a class="reference internal image-reference" href="_images/08_rightClick.JPG"><img alt="_images/08_rightClick.JPG" src="_images/08_rightClick.JPG" style="width: 292.0px; height: 388.8px;" /></a>
+</li>
+<li><p class="first">「コンソール」タブで起動を確認します。</p>
+<a class="reference internal image-reference" href="_images/09_started.JPG"><img alt="_images/09_started.JPG" src="_images/09_started.JPG" style="width: 710.4px; height: 196.0px;" /></a>
+</li>
+<li><p class="first">コンソールタブの上部にある赤い四角形のボタンを押下して停止します。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="eclipse-postgresql">
+<h2>2.8. Eclipse 上での PostgreSQL データ・ソース・エクスプローラー登録<a class="headerlink" href="#eclipse-postgresql" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Eclipse から PostgreSQL のデータを確認するために登録を行います。</p>
+<ol class="arabic">
+<li><p class="first">C:\tool\pleiades\eclipse 内の eclipse.exe を起動します。</p>
+</li>
+<li><p class="first">下のタブにある「データ・ソース・エクスプローラー」を選択します。</p>
+<a class="reference internal image-reference" href="_images/01_tab1.JPG"><img alt="_images/01_tab1.JPG" src="_images/01_tab1.JPG" style="width: 709.6px; height: 169.6px;" /></a>
+</li>
+<li><p class="first">「データベース接続」を右クリックし、「新規(N)...」を選択します。</p>
+<a class="reference internal image-reference" href="_images/02_new.JPG"><img alt="_images/02_new.JPG" src="_images/02_new.JPG" style="width: 712.0px; height: 166.4px;" /></a>
+</li>
+<li><p class="first">「新規接続プロファイル」画面で以下の値を設定し、「次へ(N)&gt;」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名前</th>
+<th class="head">設定する値もしくは文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>接続プロファイル・タイプ(C)</td>
+<td>PostgreSQL</td>
+</tr>
+<tr class="row-odd"><td>名前(M)</td>
+<td>PostgreSQL</td>
+</tr>
+<tr class="row-even"><td>説明(オプション)</td>
+<td>(空欄)</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/03_01_connProfile.JPG"><img alt="_images/03_01_connProfile.JPG" src="_images/03_01_connProfile.JPG" style="width: 371.2px; height: 440.0px;" /></a>
+</li>
+<li><p class="first">「ドライバーおよび接続の詳細の指定」画面で「新規ドライバー定義」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/03_02_driver.JPG"><img alt="_images/03_02_driver.JPG" src="_images/03_02_driver.JPG" style="width: 408.8px; height: 140.8px;" /></a>
+</li>
+<li><p class="first">「ドライバー・テンプレートおよび定義名の指定」画面で「名前/タイプ」タブの「PostgreSQL JDBC ドライバー」を選択します。</p>
+<a class="reference internal image-reference" href="_images/03_03_driverDef.JPG"><img alt="_images/03_03_driverDef.JPG" src="_images/03_03_driverDef.JPG" style="width: 480.0px; height: 400.0px;" /></a>
+</li>
+<li><p class="first">「Jar リスト」タブを選択し、「postgresql-8.1-404.jdbc2.jar」を選択し「JAR/Zip の除去(R)」ボタンを押下して削除します。</p>
+<a class="reference internal image-reference" href="_images/03_04_deleteJar.JPG"><img alt="_images/03_04_deleteJar.JPG" src="_images/03_04_deleteJar.JPG" style="width: 480.0px; height: 400.0px;" /></a>
+</li>
+<li><div class="first line-block">
+<div class="line">「Jar リスト」タブで一番上の「JAR/Zip の追加(A)」ボタンを押下し「ファイルの選択」ダイアログを表示します。</div>
+<div class="line">&#8220;C:\tool\postgresql-9.4-1206-jdbc41.jar&#8221; を選択し「開く(O)」を押下します。</div>
+</div>
+<a class="reference internal image-reference" href="_images/03_05_selectJar.JPG"><img alt="_images/03_05_selectJar.JPG" src="_images/03_05_selectJar.JPG" style="width: 546.4px; height: 384.0px;" /></a>
+</li>
+<li><p class="first">「Jar リスト」タブに JDBC ドライバが表示されます。</p>
+<a class="reference internal image-reference" href="_images/03_06_jarSelected.JPG"><img alt="_images/03_06_jarSelected.JPG" src="_images/03_06_jarSelected.JPG" style="width: 480.0px; height: 400.0px;" /></a>
+</li>
+<li><p class="first">「プロパティー」タブで以下の値を設定し、「OK」ボタンを押下します。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">プロパティー</th>
+<th class="head">設定文字列</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>データベース名</td>
+<td>shainweb</td>
+</tr>
+<tr class="row-odd"><td>パスワード</td>
+<td>PostgreSQL インストール時に設定したパスワード</td>
+</tr>
+<tr class="row-even"><td>ユーザー ID</td>
+<td>postgres</td>
+</tr>
+<tr class="row-odd"><td>接続 URL</td>
+<td>jdbc:postgresql://localhost:5432/shainweb</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="_images/03_07_property.JPG"><img alt="_images/03_07_property.JPG" src="_images/03_07_property.JPG" style="width: 480.0px; height: 400.0px;" /></a>
+</li>
+<li><p class="first">値が設定された画面が表示されます。「パスワードの保管(V)」にチェックを入れます。</p>
+<a class="reference internal image-reference" href="_images/04_filled.JPG"><img alt="_images/04_filled.JPG" src="_images/04_filled.JPG" style="width: 371.2px; height: 468.8px;" /></a>
+</li>
+<li><p class="first">右下にある「接続のテスト(T)」ボタンを押下し、成功することを確認し、「次へ(N)&gt;」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/05_pingOk.JPG"><img alt="_images/05_pingOk.JPG" src="_images/05_pingOk.JPG" style="width: 352.8px; height: 100.0px;" /></a>
+</li>
+<li><p class="first">「要約」画面が表示されます。「完了(F)」ボタンを押下します。</p>
+<a class="reference internal image-reference" href="_images/06_summary.JPG"><img alt="_images/06_summary.JPG" src="_images/06_summary.JPG" style="width: 371.2px; height: 468.8px;" /></a>
+</li>
+<li><p class="first">「データ・ソース・エクスプローラー」タブで接続が追加されていることを確認します。</p>
+<img alt="_images/07_complete.png" src="_images/07_complete.png" />
+</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="03_CreateProject.html" title="3. プロジェクトの作成"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="01_Specification.html" title="1. 説明"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">WebAppTraining 1.0 ドキュメント</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, javadera.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1 で生成しました。
+    </div>
+<script type="text/javascript">
+<!--
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76729087-1', 'auto');
+  ga('send', 'pageview');
+-->
+</script>
+
+  </body>
+</html>
