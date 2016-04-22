@@ -13,7 +13,7 @@ index.xhtml, endState.xhtml の作成
 
 #. プロジェクトを右クリックし「新規(N)」->「XHTML ページ」を選択します。
 
-   .. image:: ../images/JSF/JSF/02_newXHTML.png
+   .. image:: ./images/JSF/JSF/02_newXHTML.png
          :scale: 80%
 
 #. 「New XHTML Page」ダイアログで以下の値を指定し、「次へ(N)>」ボタンを押下します。
@@ -26,7 +26,7 @@ index.xhtml, endState.xhtml の作成
       "ファイル名(M)", "index.xhtml"
       |
 
-   .. image:: ../images/JSF/JSF/03_01_fileName.png
+   .. image:: ./images/JSF/JSF/03_01_fileName.png
          :scale: 80%
 
 #. 「Select XHTML Template」画面で以下の値を指定し、「完了(F)>」ボタンを押下します。
@@ -39,12 +39,12 @@ index.xhtml, endState.xhtml の作成
       "テンプレート(T)", "Blank JSF Page"
       |
 
-   .. image:: ../images/JSF/JSF/03_02_template.png
+   .. image:: ./images/JSF/JSF/03_02_template.png
          :scale: 80%
 
 #. 「プロジェクト・エクスプローラー」の「デプロイ済みリソース」webapp 配下に index.xhtml が作成されます。
 
-   .. image:: ../images/JSF/JSF/04_added.png
+   .. image:: ./images/JSF/JSF/04_added.png
 
 #. 同様に、endState.xhtml を作成してください。
 
@@ -148,7 +148,7 @@ web.xml の作成
 
 #. 「ウィザードを選択」ダイアログで「XML」配下の「XML ファイル」を選択し、「次へ(N)>」ボタンを押下します。
 
-   .. image:: ../images/JSF/JSF/05_01_webxml.png
+   .. image:: ./images/JSF/JSF/05_01_webxml.png
          :scale: 80%
 
 #. 「XML」画面で以下の値を指定し、「次へ(N)>」ボタンを押下します。
@@ -161,17 +161,17 @@ web.xml の作成
       "ファイル名(M)", "web.xml"
       |
 
-   .. image:: ../images/JSF/JSF/05_02_fileName.png
+   .. image:: ./images/JSF/JSF/05_02_fileName.png
          :scale: 80%
 
 #. 「次から XML ファイルを作成」画面で「XML テンプレートから XML ファイルを作成(T)」を指定し、「次へ(N)>」ボタンを押下します。
 
-   .. image:: ../images/JSF/JSF/05_03_create.png
+   .. image:: ./images/JSF/JSF/05_03_create.png
          :scale: 80%
 
 #. 「XML テンプレートの選択」画面で何も変更せず、「完了(F)」ボタンを押下します。
 
-   .. image:: ../images/JSF/JSF/05_04_template.png
+   .. image:: ./images/JSF/JSF/05_04_template.png
          :scale: 80%
 
 #. 作成された XML ファイルを以下のように編集して保存します。
@@ -223,7 +223,7 @@ Eclipse が使用するブラウザの設定
 
 #. 右ペインで「外部 Web ブラウザーを使用(X)」を選択します。
 
-   .. image:: ../images/JSF/Debug/00_browser.png
+   .. image:: ./images/JSF/Debug/00_browser.png
          :scale: 70%
 
 #. 「外部 Web ブラウザー」で好みのブラウザを指定します。
@@ -236,14 +236,14 @@ Eclipse が使用するブラウザの設定
 
 #. プロジェクトを右クリックし「デバッグ(D)」->「サーバーでデバッグ(1)」を選択します。
 
-   .. image:: ../images/JSF/Debug/01_debugOnServer.png
+   .. image:: ./images/JSF/Debug/01_debugOnServer.png
          :scale: 70%
 
 #. コンソール画面上で、WildFly が起動していることが確認できます。
 
 #. ブラウザに以下のような画面が表示されます。
 
-   .. image:: ../images/JSF/Debug/02_index.png
+   .. image:: ./images/JSF/Debug/02_index.png
          :scale: 100%
 
 #. ShainList クラスの serveResponse メソッドで return 文にブレイクポイントを設定します。
@@ -252,12 +252,12 @@ Eclipse が使用するブラウザの設定
 
 #. 設定したブレイクポイントで停止し、デバッグ可能であることが分かります。
 
-   .. image:: ../images/JSF/Debug/03_breakPoint.png
+   .. image:: ./images/JSF/Debug/03_breakPoint.png
          :scale: 100%
 
 #. Eclipse 上で F8 を押下すると endState.xhtml が表示されます。
 
-   .. image:: ../images/JSF/Debug/04_endState.png
+   .. image:: ./images/JSF/Debug/04_endState.png
          :scale: 100%
 
 #. 画面上で「戻る」リンクをクリックすると最初の画面に戻ります。
@@ -328,7 +328,7 @@ PrimeFaces のボタンを使用してみます。index.xhtml を以下のよう
 
 デバッグ実行すると、以下のようになります。
 
-.. image:: ../images/JSF/JSF/06_pf_Button.png
+.. image:: ./images/JSF/JSF/06_pf_Button.png
      :scale: 100%
 
 ボタン上にマウスを移動したときにボタンの色が変わることが分かります。
@@ -356,14 +356,14 @@ CSS ファイルの作成
       "フォルダー名(N)", "css"
       |
 
-   .. image:: ../images/JSF/JSF/css/00_folder.png
+   .. image:: ./images/JSF/JSF/css/00_folder.png
          :scale: 80%
 
 #. 作成した css フォルダーを右クリックし、「新規(N)>」「その他(O)」を選択します。
 
 #. 「Web」配下の「CSS ファイル」を選択し、「次へ(N)>」ボタンを押下します。
 
-   .. image:: ../images/JSF/JSF/css/01_wizard.png
+   .. image:: ./images/JSF/JSF/css/01_wizard.png
         :scale: 80%
 
 #. 「CSS」画面で以下の値を指定し、「完了(F)」ボタンを押下します。
@@ -376,7 +376,7 @@ CSS ファイルの作成
       "ファイル名(M)", "shainweb.css"
       |
 
-   .. image:: ../images/JSF/JSF/css/02_css.png
+   .. image:: ./images/JSF/JSF/css/02_css.png
          :scale: 80%
 
 作成された shainweb.css を以下のように編集してください。
@@ -427,7 +427,7 @@ index.xhtml ファイルの編集
 
 画面をリロードすると、フォントが小さくなっていることが確認できます。
 
-.. image:: ../images/JSF/JSF/css/03_complete.png
+.. image:: ./images/JSF/JSF/css/03_complete.png
      :scale: 100%
 
 
@@ -446,7 +446,7 @@ index.xhtml ファイルの編集
 
 #. プロジェクトを右クリックし「JPA ツール」->「テーブルからエンティティーを生成...」を選択します。
 
-   .. image:: ../images/JSF/Data/00_tableToEntity.png
+   .. image:: ./images/JSF/Data/00_tableToEntity.png
         :scale: 80%
 
 #. 「エンティティーの生成」ダイアログで以下の値を指定し、「完了(F)」ボタンを押下します。
@@ -460,12 +460,12 @@ index.xhtml ファイルの編集
       "コンソール構成(C)", "shainweb"
       |
 
-   .. image:: ../images/JSF/Data/01_createEntity.png
+   .. image:: ./images/JSF/Data/01_createEntity.png
         :scale: 80%
 
 #. com.javadera.shainweb.model パッケージ配下に \Employee_.java と \Employee.java および \RoleMaster.java と \RoleMaster_.java の 4 つのファイルが生成されていることを確認します。
 
-   .. image:: ../images/JSF/Data/02_complete.png
+   .. image:: ./images/JSF/Data/02_complete.png
 
 アンダーバーの付いていないクラス \Employee.java と \RoleMaster.java の中身を確認してください。
 @Id や @Column などのアノテーションが付いていることが分かります。
@@ -629,10 +629,31 @@ PrimeFaces コンポーネントの dataTable を使って一覧表示部分を�
 
 プロジェクトをデバッグ実行してください。以下のような画面が表示されます。
 
-.. image:: ../images/JSF/Data/03_dataTable.png
+.. image:: ./images/JSF/Data/03_dataTable.png
     :scale: 60%
 
 退社日は設定していないので空欄になります。
+
+
+
+pom.xml の修正
+---------------------------------------------------------------------
+プロジェクトのフォルダ直下にある pom.xml を開きます。<build> タグ配下の <plugins> 配下に以下を追記してください。
+
+::
+   
+   <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-compiler-plugin</artifactId>
+       <version>3.5.1</version>
+       <configuration>
+         <source>${maven.compiler.source}</source>
+         <target>${maven.compiler.target}</target>
+         <compilerArgument>-proc:none</compilerArgument>
+       </configuration>
+   </plugin>
+
+追記したら保存して閉じてください。
 
 
 
@@ -641,7 +662,7 @@ Template による画面の分割表示
 テンプレートを使って、画面を分割します。これにより以下の図に示すように見やすい画面を構築できます。
 
 
-.. image:: ../images/JSF/Template/01_goal.png
+.. image:: ./images/JSF/Template/01_goal.png
     :scale: 60%
 
 
@@ -981,7 +1002,7 @@ web.xml の修正
 
 デバッグ実行し、以下のような画面が出力されることを確認してください。
 
-.. image:: ../images/JSF/Template/01_goal.png
+.. image:: ./images/JSF/Template/01_goal.png
     :scale: 60%
 
 

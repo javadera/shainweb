@@ -1000,7 +1000,7 @@ NamedQueries, NamedQuery アノテーションを追加します。これによ�
 この状態でデバッグ実行してください。データベースから社員一覧を取得し、その結果を表示します。
 現時点ではデータが入っていないので、「社員は存在しません。」のメッセージが表示されます。
 
-.. image:: ../images/JPA/01_emptyList.png
+.. image:: ./images/JPA/01_emptyList.png
 
 
 
@@ -1009,17 +1009,17 @@ NamedQueries, NamedQuery アノテーションを追加します。これによ�
 社員一覧画面で「新規追加」ボタンを押下して、社員データ画面に遷移します。
 空欄に情報を入力してください。便宜上「退社日」は 9999/12/31 を入力してください。
 
-.. image:: ../images/JPA/02_shainData_namae1.png
+.. image:: ./images/JPA/02_shainData_namae1.png
      :scale: 60%
 
 入力後「追加」ボタンを押下します。社員一覧画面に遷移し、表にデータが表示されます。
 
-.. image:: ../images/JPA/03_shainAdded.png
+.. image:: ./images/JPA/03_shainAdded.png
      :scale: 60%
 
 pgAdmin でデータが追加されていることもチェックできます。
 
-.. image:: ../images/JPA/04_pgAdminData.png
+.. image:: ./images/JPA/04_pgAdminData.png
      :scale: 60%
 
 データの追加は EntityManager の persist メソッドに対して Entity クラスのインスタンスを引数に渡すだけで実行できます。
@@ -1036,19 +1036,19 @@ pgAdmin でデータが追加されていることもチェックできます。
 社員一覧画面の「編集/削除」にあるスパナのアイコンが付いているボタンを押下します。
 社員 ID 欄が追加された社員データ画面が表示されます。
 
-.. image:: ../images/JPA/05_shainData_edit.png
+.. image:: ./images/JPA/05_shainData_edit.png
      :scale: 60%
 
 表示された情報を編集し、「更新」ボタンを押下すると社員一覧画面に遷移し、表に更新後のデータが表示されます。
 
-.. image:: ../images/JPA/06_shainData_editDone.png
+.. image:: ./images/JPA/06_shainData_editDone.png
      :scale: 60%
 
 データの編集は EntityManager の merge メソッドで、Entity クラスのインスタンスを EntityManager の管理下に置き、そのインスタンスを flush メソッドによりデータベースに書き込むことにより実行します。
 
 新規挿入時に固定文字列で設定したパスワードは、カギのアイコンが付いているボタンを押下することにより変更できます。
 
-.. image:: ../images/JPA/06_01_shainPassword_edit.png
+.. image:: ./images/JPA/06_01_shainPassword_edit.png
      :scale: 80%
 
 
@@ -1059,17 +1059,17 @@ pgAdmin でデータが追加されていることもチェックできます。
 社員一覧画面の「編集/削除」にあるゴミ箱のアイコンが付いているボタンを押下します。
 Javascript のダイアログが表示され、本当に削除を実行するか否かの確認画面が表示されます。
 
-.. image:: ../images/JPA/09_deleteConfirmDialog.png
+.. image:: ./images/JPA/09_deleteConfirmDialog.png
      :scale: 60%
 
 「OK」ボタンの押下で論理削除が実行されます。社員一覧画面から対象データが削除されます。
 
-.. image:: ../images/JPA/10_shainList_deleted.png
+.. image:: ./images/JPA/10_shainList_deleted.png
      :scale: 60%
 
 pgAdmin でデータが論理削除されていることもチェックできます。
 
-.. image:: ../images/JPA/11_logicalDeleted.png
+.. image:: ./images/JPA/11_logicalDeleted.png
 
 データの削除は、データ更新時と同様に EntityManager の管理下に置いた状態で remove メソッドを呼び出して実行します。
 
