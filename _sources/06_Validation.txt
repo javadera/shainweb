@@ -38,12 +38,12 @@ JBoss ツール・プロパティ・エディターを用いて作成します�
 
 #. 下の「プロパティ」タブを選択してプロパティの「追加」「編集」「削除」を右側のボタンで行います。
 
-   .. image:: ./images/Validation/02_jbossEditor_01.png
+   .. image:: ../images/Validation/02_jbossEditor_01.png
       :scale: 70%
 
 #. Unicode 表記は「ソース」タブで確認できます。
 
-   .. image:: ./images/Validation/02_jbossEditor_02.png
+   .. image:: ../images/Validation/02_jbossEditor_02.png
       :scale: 70%
 
 #. ソースコードを以下のように編集してください。
@@ -323,7 +323,7 @@ Bean Validation を使用し上書きしたエラーメッセージを使用す�
 
 バリデーションが掛かってデータ入力を促されます。
 
-.. image:: ./images/Validation//01_validation_Ja.png
+.. image:: ../images/Validation//01_validation_Ja.png
      :scale: 60%
 
 

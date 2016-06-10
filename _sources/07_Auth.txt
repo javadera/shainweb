@@ -59,12 +59,12 @@ WildFly の設定追加
 
 #. Configuration タブの SubSystems から Security を選択します。
 
-   .. image:: ./images/Auth/0_authConfig_01_addSecurityDomain.png
+   .. image:: ../images/Auth/0_authConfig_01_addSecurityDomain.png
          :width: 70%
 
 #. 「Add」ボタンを押下し、「New Security Domain」ダイアログで以下の値を設定し、「Save」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_02_newSecurityDomain.png
+   .. image:: ../images/Auth/0_authConfig_02_newSecurityDomain.png
          :width: 70%
 
    .. csv-table::
@@ -77,17 +77,17 @@ WildFly の設定追加
 
 #. 「Security Domain」の一覧に shainweb が追加されます。選択し「View」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_03_securityDomainAddedViewButton.png
+   .. image:: ../images/Auth/0_authConfig_03_securityDomainAddedViewButton.png
          :width: 70%
 
 #. 「Authentication Modules」画面が表示されます。右のほうにある「Add」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_04_addModuleButton.png
+   .. image:: ../images/Auth/0_authConfig_04_addModuleButton.png
          :width: 70%
 
 #. 「New login-module」ダイアログが表示されます。以下の値を設定し、「Save」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_05_newLoginModule.png
+   .. image:: ../images/Auth/0_authConfig_05_newLoginModule.png
          :width: 70%
 
    .. csv-table::
@@ -101,12 +101,12 @@ WildFly の設定追加
 
 #. 「Authentication Modules」画面に「shainweb_auth」が追加されます。「Attributes」の下にある「Edit」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_06_moduleOptionEdit.png
+   .. image:: ../images/Auth/0_authConfig_06_moduleOptionEdit.png
          :width: 40%
 
 #. 「Modules options:」に以下の値を設定し、「Save」ボタンを押下します。
 
-   .. image:: ./images/Auth/0_authConfig_07_moduleOptionEditDone.png
+   .. image:: ../images/Auth/0_authConfig_07_moduleOptionEditDone.png
          :width: 70%
 
    .. csv-table::
@@ -122,7 +122,7 @@ WildFly の設定追加
 
 #. 編集内容が確定されます。
 
-   .. image:: ./images/Auth/0_authConfig_08_moduleOptionEditFinished.png
+   .. image:: ../images/Auth/0_authConfig_08_moduleOptionEditFinished.png
          :width: 70%
 
 
@@ -132,7 +132,7 @@ Basic 認証の動作確認
 デバッグ実行してください。
 画面表示時にダイアログでユーザ名とパスワードの入力を促されます。
 
-.. image:: ./images/Auth/1_authDialog.png
+.. image:: ../images/Auth/1_authDialog.png
      :width: 50%
 
 ロールが ADMIN の社員 ID とパスワードを入力すると社員一覧画面が表示されます。

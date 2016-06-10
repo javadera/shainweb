@@ -13,17 +13,17 @@ Maven プロジェクトの作成
 #. | 「ウィザードを選択」画面が表示されます。「Maven」配下の「Maven プロジェクト」を選択します。
    | 「次へ(N)>」ボタンを押下します。
 
-   .. image:: ./images/CreateProject/createProject/01_selectMaven.JPG
+   .. image:: ../images/CreateProject/createProject/01_selectMaven.JPG
 
 #. 「新規 Maven プロジェクト」画面が表示されます。変更せず「次へ(N)>」ボタンを押下します。
 
-   .. image:: ./images/CreateProject/createProject/02_newMavenProj.JPG
+   .. image:: ../images/CreateProject/createProject/02_newMavenProj.JPG
          :scale: 70%
 
 #. | 「アーキタイプの選択」画面が表示されます。
    | 「フィルター(F)」に「javaee7」を入力するとアーキタイプが絞り込まれます。
 
-   .. image:: ./images/CreateProject/createProject/03_filtered.JPG
+   .. image:: ../images/CreateProject/createProject/03_filtered.JPG
          :scale: 70%
 
 #. 一覧から以下のものを選択し、「次へ(N)>」ボタンを押下します。
@@ -34,7 +34,7 @@ Maven プロジェクトの作成
       
       "org.wildfly.archtype", "wildfly-javaee7-webapp-blank-archetype", "8.2.0.Final"
       |
-   .. image:: ./images/CreateProject/createProject/04_selectArche.JPG
+   .. image:: ../images/CreateProject/createProject/04_selectArche.JPG
          :scale: 80%
 
 #. 「アーキタイプ・パラメーターの指定」画面が表示されます。以下の値を設定して「完了(F)」を押下します。
@@ -48,7 +48,7 @@ Maven プロジェクトの作成
       "バージョン:", "1.0.0"
       "パッケージ:", "com.javadera.shainweb"
       |
-   .. image:: ./images/CreateProject/createProject/05_archtypeParam.JPG
+   .. image:: ../images/CreateProject/createProject/05_archtypeParam.JPG
          :scale: 80%
 
 #. | 「プロジェクト・エクスプローラー」に「shainweb」が追加されます。
@@ -71,7 +71,7 @@ Maven プロジェクトの作成
 
 作成されたプロジェクトを「プロジェクト・エクスプローラー」から開くと下図のようになっています (一部のみ拡大表示)。
 
-.. image:: ./images/CreateProject/projectExplorer/01_content.png
+.. image:: ../images/CreateProject/projectExplorer/01_content.png
 
 
 
@@ -147,18 +147,18 @@ JPA は Java EE アプリケーションがデータベースアクセスを行�
 
 #. shainweb プロジェクトを右クリックし、一番下にある「プロパティ」を選択します。
 
-   .. image:: ./images/CreateProject/facet/01_property.JPG
+   .. image:: ../images/CreateProject/facet/01_property.JPG
          :scale: 80%
 
 #. | 左ペインから下のほうにある「プロジェクト・ファセット」を選択し、右ペインで「ランタイム(R)」タブを選択します。
    | 右ペインで設定されている「プロジェクト・ファセット」のチェックは変更する必要はありません。
 
-   .. image:: ./images/CreateProject/facet/02_facet.JPG
+   .. image:: ../images/CreateProject/facet/02_facet.JPG
          :scale: 80%
 
 #. 「ランタイム」の一覧から「WildFly-9.0.2.Final」を選択し、右下の「適用(A)」ボタンを押下します。
 
-   .. image:: ./images/CreateProject/facet/03_selectRuntime.JPG
+   .. image:: ../images/CreateProject/facet/03_selectRuntime.JPG
          :scale: 80%
 
 
@@ -168,7 +168,7 @@ JPA の設定
 
 #. 左ペインで「JPA」を選択します。
 
-   .. image:: ./images/CreateProject/facet/04_JPA.JPG
+   .. image:: ../images/CreateProject/facet/04_JPA.JPG
          :scale: 80%
 
 #. 右ペインで以下の値を設定します。
@@ -182,7 +182,7 @@ JPA の設定
       "正規メタモデル(JPA 2.0)", "ソース・フォルダー", "src/main/java"
       |
 
-   .. image:: ./images/CreateProject/facet/05_JPA_Impl.JPG
+   .. image:: ../images/CreateProject/facet/05_JPA_Impl.JPG
          :scale: 80%
 
 #. 右下の「適用(A)」ボタンを押下します。
@@ -195,7 +195,7 @@ XML ファイルの削除
 =====================================================================
 「プロジェクト・エクスプローラー」の「デプロイ済みリソース」内の「shainweb-ds.xml」を削除します。
 
-.. image:: ./images/CreateProject/shainweb-ds.png
+.. image:: ../images/CreateProject/shainweb-ds.png
 
 
 

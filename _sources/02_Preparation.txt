@@ -30,7 +30,7 @@ Apache Maven のインストール
 
 以下の図では、バージョン 3.3.9 を取得しています。
 
-.. image:: ./images/Preparation/Maven/01_MavenDownload.JPG
+.. image:: ../images/Preparation/Maven/01_MavenDownload.JPG
       :scale: 70%
 
 tool フォルダに、フォルダ名「maven」として解凍してください。
@@ -44,19 +44,19 @@ tool フォルダに、フォルダ名「maven」として解凍してくださ�
 
 #. 左ペインから「コンピュータ」を右クリックし「プロパティ」を選択します。
 
-   .. image:: ./images/Preparation/Maven/02_Computerのプロパティ.JPG
+   .. image:: ../images/Preparation/Maven/02_Computerのプロパティ.JPG
          :scale: 80%
 
 #. 左上にある「システムの詳細設定」を選択します。
 
 #. システムのプロパティ ダイアログの「詳細設定」タブから「環境変数」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Maven/03_システムのプロパティ_環境変数.JPG
+   .. image:: ../images/Preparation/Maven/03_システムのプロパティ_環境変数.JPG
          :scale: 80%
 
 #. 「環境変数」ダイアログの「システム環境変数(S)」で「Path」を選択し、「編集」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Maven/04_パス編集ボタン.JPG
+   .. image:: ../images/Preparation/Maven/04_パス編集ボタン.JPG
          :scale: 80%
 
 #. | 表示される「システム変数の編集」ダイアログにおいて以下の表の文字列を追記します。
@@ -76,7 +76,7 @@ tool フォルダに、フォルダ名「maven」として解凍してくださ�
 
 #. 「cmd」と入力して「OK」を押下します。
 
-   .. image:: ./images/Preparation/Maven/06_cmd.JPG
+   .. image:: ../images/Preparation/Maven/06_cmd.JPG
          :scale: 80%
 
 #. | コマンドラインのウィンドウで以下を入力して Enter キーを押下します。
@@ -106,7 +106,7 @@ Eclipse Pleiades のインストールと起動
 #. | 「ワークスペース・ランチャー」で「ワークスペース(W)」に以下のパスを指定します。
    |  C:\\works\\sampleWS
 
-   .. image:: ./images/Preparation/Pleiades/01_workSpaceLauncher.JPG
+   .. image:: ../images/Preparation/Pleiades/01_workSpaceLauncher.JPG
          :scale: 70%
 
 #. 「OK」ボタンを押下します。
@@ -123,7 +123,7 @@ Eclipse を起動して、プラグインをインストールします。
 
 #. メニューバーの「ヘルプ(H)」から「Eclipse マーケットプレース」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/02_eclipseMarketPlace.JPG
+   .. image:: ../images/Preparation/Pleiades/02_eclipseMarketPlace.JPG
          :scale: 80%
 
 #. 「Eclipse マーケットプレース」画面の「検索(I):」に「jboss」と入力して「実行」ボタンを押下します。
@@ -131,7 +131,7 @@ Eclipse を起動して、プラグインをインストールします。
 #. | 「Red Hat JBoss Developer Studio 9.0.0.GA」をインストールしてください。
    | インストールには右下の「インストール」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/03_jbossDevStudio.JPG
+   .. image:: ../images/Preparation/Pleiades/03_jbossDevStudio.JPG
          :scale: 80%
 
 #. 「選択されたフィーチャーの確認」画面で「確認(C)>」ボタンを押下します。
@@ -142,17 +142,17 @@ Eclipse を起動して、プラグインをインストールします。
 
 #. 途中で以下の「セキュリティ警告」ダイアログが表示されます、「OK」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/04_04_proceedInstall.JPG
+   .. image:: ../images/Preparation/Pleiades/04_04_proceedInstall.JPG
          :scale: 80%
 
 #. 「ソフトウェア更新」ダイアログが表示されます。「はい(Y)」ボタンを押下して Eclipse を再起動します。
 
-   .. image:: ./images/Preparation/Pleiades/04_05_restart.JPG
+   .. image:: ../images/Preparation/Pleiades/04_05_restart.JPG
          :scale: 80%
 
 #. 再起動後、「JBoss Developer Studio Usage」ダイアログが表示されます。「はい(Y)」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/05_usage.JPG
+   .. image:: ../images/Preparation/Pleiades/05_usage.JPG
          :scale: 80%
 
 以上で、プラグインのインストールは終了です。
@@ -169,52 +169,52 @@ PostgreSQL のインストール
 
 #. ファイルをダブルクリックし、「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/01_Top.JPG
+   .. image:: ../images/Preparation/PostgreSQL/01_Top.JPG
          :scale: 70%
 
 #. 「Installation Directory」画面が表示されます。変更せず「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/02_InstallationDirectory.JPG
+   .. image:: ../images/Preparation/PostgreSQL/02_InstallationDirectory.JPG
          :scale: 70%
 
 #. 「Data Directory」画面が表示されます。変更せず「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/03_DataDirectory.JPG
+   .. image:: ../images/Preparation/PostgreSQL/03_DataDirectory.JPG
          :scale: 70%
 
 #. 「Password」画面が表示されます。「pass#1234」を登録してください。
 
-   .. image:: ./images/Preparation/PostgreSQL/04_Password.JPG
+   .. image:: ../images/Preparation/PostgreSQL/04_Password.JPG
          :scale: 70%
 
 #. 「Port」画面が表示されます。変更せず「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/05_portNum.JPG
+   .. image:: ../images/Preparation/PostgreSQL/05_portNum.JPG
          :scale: 70%
 
 #. 「Port」画面が表示されます。変更せず「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/05_portNum.JPG
+   .. image:: ../images/Preparation/PostgreSQL/05_portNum.JPG
          :scale: 70%
 
 #. 「Advanced Option」画面が表示されます。変更せず「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/06_defaultLocale.JPG
+   .. image:: ../images/Preparation/PostgreSQL/06_defaultLocale.JPG
          :scale: 70%
 
 #. 「Ready To Install」画面が表示されます。「Next>」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/07_ready.JPG
+   .. image:: ../images/Preparation/PostgreSQL/07_ready.JPG
          :scale: 70%
 
 #. インストールが開始されます。
 
-   .. image:: ./images/Preparation/PostgreSQL/08_Installing.JPG
+   .. image:: ../images/Preparation/PostgreSQL/08_Installing.JPG
          :scale: 70%
 
 #. インストールが完了したら、チェックボックスのチェックを外して「Finish」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/09_complete.JPG
+   .. image:: ../images/Preparation/PostgreSQL/09_complete.JPG
          :scale: 70%
 
 
@@ -238,17 +238,17 @@ JDBC ドライバのダウンロード
 
 #. 「データベース」を右クリックし「新規オブジェクト」「新しいデータベース...」を選択します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/01_createDB.JPG
+   .. image:: ../images/Preparation/PostgreSQL/createDB/01_createDB.JPG
          :width: 50%
 
 #. 「新しいデータベース」ウィンドウで「プロパティ」タブで「名前」に「shainweb」を指定して「OK」を押下します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/02_shainweb.JPG
+   .. image:: ../images/Preparation/PostgreSQL/createDB/02_shainweb.JPG
          :width: 50%
 
 #. F5 を押下して、左ペインで「shainweb」データベースが追加されていることを確認します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/03_complete.JPG
+   .. image:: ../images/Preparation/PostgreSQL/createDB/03_complete.JPG
          :width: 50%
 
 
@@ -265,7 +265,7 @@ pgAdmin を起動して、テーブルの作成を行います。
 
 #. 中央上部にある接続先が「shainweb の postgres\@localhost:5432」であることを確認します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/05_connDb.JPG
+   .. image:: ../images/Preparation/PostgreSQL/createDB/05_connDb.JPG
 
 #. 「SQL エディタ」に下記のテーブル定義文を入力します。
 
@@ -273,11 +273,11 @@ pgAdmin を起動して、テーブルの作成を行います。
 
 #. 「出力ビュー」のメッセージでエラーがないことを確認し、クエリツールを終了します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/06_success.JPG
+   .. image:: ../images/Preparation/PostgreSQL/createDB/06_success.JPG
 
 #. pgAdmin で F5 を押下し左ペインで 3 テーブルが作成されていることを確認します。
 
-   .. image:: ./images/Preparation/PostgreSQL/createDB/07_tableCreated.png
+   .. image:: ../images/Preparation/PostgreSQL/createDB/07_tableCreated.png
 
 
 入力する SQL 文
@@ -356,14 +356,14 @@ Redhat が提供するフリーの Java EE アプリケーションサーバ `Wi
    | セキュリティの警告ダイアログが表示される場合は、チェックを外して「実行」を押下します。
    | 以下のメッセージが表示されます。
 
-   .. image:: ./images/Preparation/WildFly/01_addUser.JPG
+   .. image:: ../images/Preparation/WildFly/01_addUser.JPG
          :width: 70%
 
 #. 何も入力せず Enter キーを押下します。
 
 #. ユーザ名の入力を促されます。「admin」を入力して Enter キーを押下します。
 
-   .. image:: ./images/Preparation/WildFly/02_userName.JPG
+   .. image:: ../images/Preparation/WildFly/02_userName.JPG
          :width: 70%
 
 #. 本当に作成するか否かを聞かれるので「yes」を入力し Enter キーを押下します。
@@ -371,14 +371,14 @@ Redhat が提供するフリーの Java EE アプリケーションサーバ `Wi
 #. | 設定するパスワードを聞かれるので「pass#1234」を入力し、Enter キーを押下します。
    | 「Re-enter Password」でパスワード確認されるので同じパスワードを入力し、Enter キーを押下します。
 
-   .. image:: ./images/Preparation/WildFly/03_password.JPG
+   .. image:: ../images/Preparation/WildFly/03_password.JPG
          :width: 70%
 
 #. 所属グループを設定します。何も入力せず Enter キーを押下します。
 
 #. ユーザ追加確認メッセージが表示されます。「yes」を入力し Enter キーを押下します。
 
-   .. image:: ./images/Preparation/WildFly/05_confirm.JPG
+   .. image:: ../images/Preparation/WildFly/05_confirm.JPG
          :width: 70%
 
 #. ユーザ追加終了メッセージが出力され、他のアプリケーションサーバプロセスを呼び出すユーザか否かの確認メッセージが表示されます。
@@ -407,7 +407,7 @@ WildFly を起動して、PostgreSQL の JDBC ドライバを追加します。
 
 #. ユーザ名「admin」、パスワード「pass#1234」を入力してログインできることを確認します。
 
-   .. image:: ./images/Preparation/WildFly/07_managementConsole.JPG
+   .. image:: ../images/Preparation/WildFly/07_managementConsole.JPG
          :width: 70%
 
 WildFly を起動したまま、次の JDBC ドライバの追加を行ってください。
@@ -453,17 +453,17 @@ WildFly を起動して PostgreSQL 上に作成したデータベースに接続
 
 #. `管理コンソール <http://localhost:9990>`_ をブラウザで開き、右上部の「Configuration」のリンクをクリックします。
 
-   .. image:: ./images/Preparation/WildFly/datasource/01_consoleTop.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/01_consoleTop.JPG
          :width: 70%
 
 #. 「Subsystem」->「DataSources」->「Non-XA」を開き、「Add」ボタンを押下します。
 
-   .. image:: ./images/Preparation/WildFly/datasource/02_subSystem_datasource_nonxa.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/02_subSystem_datasource_nonxa.JPG
          :width: 70%
 
 #. 「Create Datasource」で「PostgreSQL Datasource」を選択し、「Next>>」をクリックします。
 
-   .. image:: ./images/Preparation/WildFly/datasource/03_01_createDatasource.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/03_01_createDatasource.JPG
          :width: 40%
 
 #. 「Step 1/3: Datasource Attributes」で「Name:」と「JNDI Name:」を次のように指定し、「Next>>」をクリックします。
@@ -478,7 +478,7 @@ WildFly を起動して PostgreSQL 上に作成したデータベースに接続
    
 #. 「Step 2/3: JDBC Driver」で「Detected Driver」タブで「postgres」を選択し、「Next>>」をクリックします。
 
-   .. image:: ./images/Preparation/WildFly/datasource/03_03_JDBCDriver.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/03_03_JDBCDriver.JPG
          :width: 40%
    |
 
@@ -493,17 +493,17 @@ WildFly を起動して PostgreSQL 上に作成したデータベースに接続
       "Password:", "PostgreSQL インストール時に設定したパスワード"
       "Security Domain:", "(空欄)"
    |
-   .. image:: ./images/Preparation/WildFly/datasource/03_04_connectionSetting.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/03_04_connectionSetting.JPG
          :width: 40%
 
 #. 「Test Connection」をクリックして、接続が成功することを確認します。
 
-   .. image:: ./images/Preparation/WildFly/datasource/03_05_testConnection.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/03_05_testConnection.JPG
          :width: 40%
 
 #. 「Done」をクリックして追加されたことを確認します。
 
-   .. image:: ./images/Preparation/WildFly/datasource/04_done.JPG
+   .. image:: ../images/Preparation/WildFly/datasource/04_done.JPG
          :width: 70%
 
 
@@ -516,12 +516,12 @@ Eclipse から WildFly を起動するために登録を行います。
 
 #. 下のタブにある「サーバー」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/server/01_tab.JPG
+   .. image:: ../images/Preparation/Pleiades/server/01_tab.JPG
          :scale: 80%
 
 #. 「使用可能なサーバーがありません・・・」をクリックして、「新規サーバー」ダイアログを表示させます。
 
-   .. image:: ./images/Preparation/Pleiades/server/02_newServer.JPG
+   .. image:: ../images/Preparation/Pleiades/server/02_newServer.JPG
          :scale: 80%
 
 #. 以下の値を選択し、「次へ(N)>」ボタンを押下します。
@@ -534,12 +534,12 @@ Eclipse から WildFly を起動するために登録を行います。
       "サーバーのホスト名(H):", "localhost"
       "サーバー名(M):", "WildFly-9.0.2.Final"
    |
-   .. image:: ./images/Preparation/Pleiades/server/03_902F.JPG
+   .. image:: ../images/Preparation/Pleiades/server/03_902F.JPG
          :scale: 80%
 
 #. 「新規 JBoss サーバーを作成します」画面が表示されます。何も変更せず「次へ(N)>」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/server/04_createServer.JPG
+   .. image:: ../images/Preparation/Pleiades/server/04_createServer.JPG
          :scale: 80%
 
 #. 「JBoss ランタイム」画面が表示されます。以下の値を設定します。
@@ -554,27 +554,27 @@ Eclipse から WildFly を起動するために登録を行います。
       "サーバー･ベース・ディレクトリー", "standalone"
       "構成ファイル", "standalone.xml"
    |
-   .. image:: ./images/Preparation/Pleiades/server/05_runtime.JPG
+   .. image:: ../images/Preparation/Pleiades/server/05_runtime.JPG
          :scale: 80%
 
 #. 「追加および除去」画面が表示されます。「完了(F)」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/server/06_addRemove.JPG
+   .. image:: ../images/Preparation/Pleiades/server/06_addRemove.JPG
          :scale: 80%
 
 #. 「サーバー」タブに「WildFly-9.0.2.Final」が追加されます。
 
-   .. image:: ./images/Preparation/Pleiades/server/07_added.JPG
+   .. image:: ../images/Preparation/Pleiades/server/07_added.JPG
          :scale: 80%
 
 #. 「WildFly-9.0.2.Final」を右クリックして「開始」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/server/08_rightClick.JPG
+   .. image:: ../images/Preparation/Pleiades/server/08_rightClick.JPG
          :scale: 80%
 
 #. 「コンソール」タブで起動を確認します。
 
-   .. image:: ./images/Preparation/Pleiades/server/09_started.JPG
+   .. image:: ../images/Preparation/Pleiades/server/09_started.JPG
          :scale: 80%
 
 #. コンソールタブの上部にある赤い四角形のボタンを押下して停止します。
@@ -589,12 +589,12 @@ Eclipse から PostgreSQL のデータを確認するために登録を行いま
 
 #. 下のタブにある「データ・ソース・エクスプローラー」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/db/01_tab.JPG
+   .. image:: ../images/Preparation/Pleiades/db/01_tab.JPG
          :scale: 80%
 
 #. 「データベース接続」を右クリックし、「新規(N)...」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/db/02_new.JPG
+   .. image:: ../images/Preparation/Pleiades/db/02_new.JPG
          :scale: 80%
 
 #. 「新規接続プロファイル」画面で以下の値を設定し、「次へ(N)>」ボタンを押下します。
@@ -607,33 +607,33 @@ Eclipse から PostgreSQL のデータを確認するために登録を行いま
       "名前(M)", "PostgreSQL"
       "説明(オプション)", "(空欄)"
       |
-   .. image:: ./images/Preparation/Pleiades/db/03_01_connProfile.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_01_connProfile.JPG
          :scale: 80%
 
 #. 「ドライバーおよび接続の詳細の指定」画面で「新規ドライバー定義」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/db/03_02_driver.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_02_driver.JPG
          :scale: 80%
 
 #. 「ドライバー・テンプレートおよび定義名の指定」画面で「名前/タイプ」タブの「PostgreSQL JDBC ドライバー」を選択します。
 
-   .. image:: ./images/Preparation/Pleiades/db/03_03_driverDef.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_03_driverDef.JPG
          :scale: 80%
 
 #. 「Jar リスト」タブを選択し、「postgresql-8.1-404.jdbc2.jar」を選択し「JAR/Zip の除去(R)」ボタンを押下して削除します。
 
-   .. image:: ./images/Preparation/Pleiades/db/03_04_deleteJar.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_04_deleteJar.JPG
          :scale: 80%
 
 #. | 「Jar リスト」タブで一番上の「JAR/Zip の追加(A)」ボタンを押下し「ファイルの選択」ダイアログを表示します。
    | "C:\\tool\\postgresql-9.4-1206-jdbc41.jar" を選択し「開く(O)」を押下します。
 
-   .. image:: ./images/Preparation/Pleiades/db/03_05_selectJar.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_05_selectJar.JPG
          :scale: 80%
 
 #. 「Jar リスト」タブに JDBC ドライバが表示されます。
 
-   .. image:: ./images/Preparation/Pleiades/db/03_06_jarSelected.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_06_jarSelected.JPG
          :scale: 80%
 
 #. 「プロパティー」タブで以下の値を設定し、「OK」ボタンを押下します。
@@ -647,26 +647,26 @@ Eclipse から PostgreSQL のデータを確認するために登録を行いま
       "ユーザー ID", "postgres"
       "接続 URL", "\jdbc:postgresql://localhost:5432/shainweb"
       |
-   .. image:: ./images/Preparation/Pleiades/db/03_07_property.JPG
+   .. image:: ../images/Preparation/Pleiades/db/03_07_property.JPG
          :scale: 80%
 
 #. 値が設定された画面が表示されます。「パスワードの保管(V)」にチェックを入れます。
 
-   .. image:: ./images/Preparation/Pleiades/db/04_filled.JPG
+   .. image:: ../images/Preparation/Pleiades/db/04_filled.JPG
          :scale: 80%
 
 #. 右下にある「接続のテスト(T)」ボタンを押下し、成功することを確認し、「次へ(N)>」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/db/05_pingOk.JPG
+   .. image:: ../images/Preparation/Pleiades/db/05_pingOk.JPG
          :scale: 80%
 
 #. 「要約」画面が表示されます。「完了(F)」ボタンを押下します。
 
-   .. image:: ./images/Preparation/Pleiades/db/06_summary.JPG
+   .. image:: ../images/Preparation/Pleiades/db/06_summary.JPG
          :scale: 80%
 
 #. 「データ・ソース・エクスプローラー」タブで接続が追加されていることを確認します。
 
-   .. image:: ./images/Preparation/Pleiades/db/07_complete.png
+   .. image:: ../images/Preparation/Pleiades/db/07_complete.png
 
 

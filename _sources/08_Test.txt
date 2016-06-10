@@ -30,7 +30,7 @@ JUnit を用いた EJB (EmployeeOperation クラス) の単体テストを実施
 
 プロジェクト・エクスプローラーは以下のようになります。
 
-.. image:: ./images/Test/01_Files.png
+.. image:: ../images/Test/01_Files.png
 
 
 
@@ -308,22 +308,22 @@ Arquillian が使用する設定ファイルです。WildFly のインストー�
 
 #. テストを実行する前に、Maven プロファイルを更新します。プロジェクトを右クリックして Maven を選択して「Maven プロファイルの選択...」を選択します。
 
-   .. image:: ./images/Test/02_01_MavenProfile.png
+   .. image:: ../images/Test/02_01_MavenProfile.png
          :scale: 60%
 
 #. 「Maven プロファイルの選択」画面において「arq-wildfly-managed」を選択し、「OK」ボタンを押下してください。
 
-   .. image:: ./images/Test/02_02_MavenProfile.png
+   .. image:: ../images/Test/02_02_MavenProfile.png
          :scale: 80%
 
 #. WildFly が停止していることを確認して EmployeeOperationTest を右クリックして「実行」->「JUnit テスト」を選択します。
 
-   .. image:: ./images/Test/03_JUnitTest.png
+   .. image:: ../images/Test/03_JUnitTest.png
          :scale: 80%
 
 #. WildFly が起動して、テストコードが実行されます。
 
-   .. image:: ./images/Test/04_TestDone.png
+   .. image:: ../images/Test/04_TestDone.png
          :scale: 80%
 
 

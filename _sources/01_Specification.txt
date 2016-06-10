@@ -74,7 +74,7 @@
 ---------------------------------------------------------------------
 社員情報とロールの関係は以下のようになります。
 
-.. image:: ./images/Specification/ER_diagram.png
+.. image:: ../images/Specification/ER_diagram.png
 
 テーブルを 2 つ作成することになります。
 
