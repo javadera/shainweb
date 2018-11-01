@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/kawakamimanabu/shainweb.svg?branch=master)](https://travis-ci.org/kawakamimanabu/shainweb)
+
 Java EE サンプルアプリケーション ShainWeb
 ---------------------------------------------------------------------
 
@@ -10,4 +13,3 @@ DB は PostgreSQL を使用しています。
 
 http://kawakamimanabu.github.io/shainweb/
 
-[![Build Status](https://travis-ci.org/kawakamimanabu/shainweb.svg?branch=master)](https://travis-ci.org/kawakamimanabu/shainweb)
