@@ -211,7 +211,6 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <!-- 
             <build>
                 <plugins>
                     <plugin>
@@ -222,7 +221,7 @@
                         </configuration>
                     </plugin>
                 </plugins>
-            </build> -->
+            </build>
         </profile>
 
         <profile>
