@@ -54,6 +54,8 @@ public class EmployeeOperationTest {
 
     @After
     public void testAfter() {
+      Employee test = getTestEmployee();
+      employeeOperation.removeEmployee(test);
     }
 
 
@@ -67,10 +69,10 @@ public class EmployeeOperationTest {
 
     @Test
     public void removeEmployee() throws Exception {
-//      Employee test = getTestEmployee();
-//      test.setShainId("AF160100");
-//      employeeOperation.addEmployee(test);
-//      employeeOperation.removeEmployee(test);
+      Employee test = getTestEmployee();
+      test.setShainId("AF160100");
+      employeeOperation.addEmployee(test);
+      employeeOperation.removeEmployee(test);
 //      test = employeeOperation.getEmployeeById("AF160100");
 //      assertNull(test);
     }
@@ -87,9 +89,8 @@ public class EmployeeOperationTest {
       test = employeeOperation.getEmployeeById("AF160199");
       assertEquals(test.getEmail(), "testupdate@shainweb.com");
       employeeOperation.removeEmployee(test);
-
     }
-
+    
     /**
      * ロールマスタデータを挿入します。
      */
